@@ -1,4 +1,4 @@
-class VehiclesController < ApplicationController
+class DataController < ApplicationController
   require 'csv'
 
   def index
