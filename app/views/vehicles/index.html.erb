@@ -1,0 +1,51 @@
+<div class='container-fluid'>
+
+    <div class='row' id = 'first_row'>
+        <div class='col-sm-1' id ='first_col'>I'm a search bar and small details can be listed below me. Such as: '50 results' or a link that jumps to that car like '2015 fiesta blue'</div>
+        <div class='col-sm-11' id ='second_col'>I should have tabs because tabs are cool.</div>
+    
+    </div>
+
+    <div class='row' id = 'second_row'>
+        <div class='col-sm-1' id ='first_col'></div>
+        <div class='col-sm-7' id ='second_col'>
+
+            <div class='vehicle_card' id='test_drive' notes='will add to class based on status then i can get rid of the id here'>
+                <%= render partial: 'vehiclecard', locals: { vehicle: @vehicles.first }%>
+            </div>
+            <div class='vehicle_card' id='sold' notes='will add to class based on status then i can get rid of the id here'>
+                <%= render partial: 'vehiclecard', locals: { vehicle: @vehicles.last }%>
+            </div>
+            <div class='vehicle_card' id='sold' notes='will add to class based on status then i can get rid of the id here'>
+                <%= render partial: 'vehiclecard', locals: { vehicle: @vehicles.first }%>
+            </div>
+
+            <% @vehicles.each do |vehicle| %>
+                <div class='vehicle_card' id='FandI' notes='will add to class based on status then i can get rid of the id here'>
+                    <%= render partial: 'vehiclecard', locals: { vehicle: vehicle }%>
+                </div>
+            <% end %>
+ 
+         </div>
+
+        <div class='col-sm-3' id ='third_col'>
+<!--             I don't really want to iterate twice here but I can't figure out 
+            how to put content in two seperate divs
+            with one loop -->
+            <% @vehicles.each do |vehicle| %>
+                <div class='vehicle-options' id='first_vehicle'><p>Maybe a list of options goes here to?</p><a href='Car show page'>Click for Invoice and Details</a></div> 
+            <% end %>
+
+        </div>
+
+        <div class= 'col-sm-1' id = 'fourth_col'>
+        </div>
+
+    </div>
+
+
+<!-- <div class='row' id ='third_row'>
+    <div class='col-sm-12'>one</div>
+</div>  -->
+
+</div>
