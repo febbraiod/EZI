@@ -1,0 +1,85 @@
+Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
+
+requires:
+
+Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
+
+Index needs this heavily.
+
+Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
+
+????? probably would work for status.  Updating whether the care is on a test drive or it's location...ect
+
+
+Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product:
+
+not sure how but duh.
+
+
+Data should be validated in Angular before submission:
+
+this is just on like a form input angular will knwo if the data is in the correct format. the quesiton is where am i going to use a form?
+
+
+Must talk to the Rails backend using $http and Services:
+
+this is should just be calling to our DB in rails and getting JSON like the API jQuery stuff using angular.
+
+
+5 pages:
+
+1) Inventory Index should split into use or new...there is a way to set a dropdown filter... or could be seperate page
+
+2) Details/Show page/Notes?
+
+3) Stats?  ---> running tally of how many of each particluar model ---> forecast vs percent sold to projected based on time... can i use the graphs visualizer?
+
+4) swap page?  ---> other delearships invoentory?(full or most wanted to trade)
+
+5) Admin/imports?/permissions?
+
+6) calendar page?
+
+
+Must contain some sort of nested views:
+
+no clue
+
+
+
+Plan:
+
+sort thru inventory so that the sales consultant can tell what is 
+in stock in that particular model and what is incoming in soon
+
+where do we get the inventory? chris said he can get a CSV from an export service.
+do we get the same on incoming cars? Can I get one for other dealerships? What do i need to get access to the ford API.
+
+
+It has to recognize a car that is on hold in the business office and which sales person sent it there(color code: yellow for F and I?, red for sold, green for test drive?, plain for nothing. SOLD BUT NOT DELIEVERED STAYS, DELIEVRED GET REMOVED FROM THE DOM and moved into a purely achival list.) 
+It has to tell the person what has been recently delivered and is no longer for sale 
+It has to recognize if a car was in the yard or at the off site garage 
+It should be able to tell if the car is on a test drive and which salesperson sent it there.
+
+It has to sort by year make and model(angular?)
+
+Need a note system as well.(put on same page with Invoice)
+
+
+use a partial to render each car
+
+Car Attrs: Year make model color MSRP and dealer invoice
+Has many: options (equipment)
+          statuses: FI, TD, On Lot, Sold, Delivered
+          has_one: photo(paperclip)
+          has_one: invoice(paperclip)
+          should attached a sales person's name when that status is created. When status is resolved this association get deleted entirely(best solution?)
+          i.e. status has_one user
+
+
+Someday:
+
+in a perfect world there'd be a map of the lot with exact locations.
+
+Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days
+
