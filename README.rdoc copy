@@ -4,6 +4,8 @@ Note for Me: The fucking CSV for used cars sucks. the fields didn't fill in corr
 
 need a way to upload a picture and push the url into the image picture url array(might be a decent place to use angular verification)
 
+how can we tell where the vehicle is?(off-lot or on)?  This can't be imported.  Should there be a way to insert just one vehicle at a time? If so we need a callback on the VIN validation to fire an update if the vehcile is being imported with more info later.
+
 requires:
 
 Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
@@ -32,13 +34,15 @@ this is should just be calling to our DB in rails and getting JSON like the API 
 
 5 pages:
 
-1) Inventory Index should split into use or new...there is a way to set a dropdown filter... or could be seperate page
+Many of these pages may only be for the admin or manager. The fact is you cannot trust the user. this app is more for the manager to track the cars and the sales people. The sales people maybe only need to set and remove statuses and notes.
+
+1) Inventory Index should split into use or new...there is a way to set a dropdown filter(there should be alot of drop down filters. This see all with sunroof, or see all in f and i))
 
 2) Details/Show page/Notes?
 
 3) Stats?  ---> running tally of how many of each particluar model ---> forecast vs percent sold to projected based on time... can i use the graphs visualizer?
 
-4) swap page?  ---> other delearships invoentory?(full or most wanted to trade)
+4) swap page?  ---> other delearships inventory?(full or most wanted to trade)...if cannot gain access through ford. This maybe a participatory page. Where other using EZI can add what they want the network to see.
 
 5) Admin/imports?/permissions?
 
