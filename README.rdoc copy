@@ -1,5 +1,9 @@
 Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
 
+Note for Me: The fucking CSV for used cars sucks. the fields didn't fill in correctly. fix this for the demo, but there has to be a better solution.
+
+need a way to upload a picture and push the url into the image picture url array(might be a decent place to use angular verification)
+
 requires:
 
 Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
