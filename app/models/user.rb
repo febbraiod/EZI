@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :notes
   has_many :notated_vehicles, through: :notes, source: :vehicle
+
+  has_many :statuses
 end

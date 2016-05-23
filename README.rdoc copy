@@ -107,13 +107,13 @@ Notes belong to an author and a Vehicle
 
 Note: User.id, Vehicle.id, Content
 
-Vehicles have many statuses
+
+Vehicles have one status. 
 
 Statuses have a User.id as Status Setter and a Vehicle.id
 
 Status types: Available, On Test Drive, In F and I, Sold, Delivered
 
-Vehicles have one status. 
 
 Available, On Test Drive, In F and I, Sold, Delivered
 If status is to be set to another the current status will be deleted
@@ -121,9 +121,6 @@ If status is to be set to another the current status will be deleted
 any vehicle whose status is not Available or Delivered goes on the calendar
 (when status is set to On Test Drive, In F and I, or Sold calender item is created
 when status is set to Available or Delivered Calendar item is destroyed)
-
-
-
 
 
 Users have many notes as authors through notes table
