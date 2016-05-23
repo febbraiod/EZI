@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #for adding angular
 gem 'bower-rails'
+gem 'angular-rails-templates'
 
 #fixed authenticity token issue
 gem 'angular_rails_csrf'

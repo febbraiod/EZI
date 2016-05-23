@@ -7,6 +7,17 @@
 </head>
 <body ng-app="app">
 
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
 <%= yield %>
 
 <%= javascript_include_tag 'application' %>
