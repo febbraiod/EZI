@@ -16,9 +16,11 @@ class Vehicle < ActiveRecord::Base
       mappings = {"stock_#" => "stock_no", "colour" => "color", "drivetrain_desc" => "drive_train", "vin" => "VIN"}
       vehicle_hash.keys.each { |k| vehicle_hash[ mappings[k] ] = vehicle_hash.delete(k) if mappings[k] }
       vehicle_hash["photo_url_list"] = vehicle_hash["photo_url_list"].split(",")
-      Vehicle.create(vehicle_hash.except("dealerid", "dealer_name", "dealer_address", "dealer_city", 
+      v = Vehicle.create(vehicle_hash.except("dealerid", "dealer_name", "dealer_address", "dealer_city", 
       "dealer_region", "dealer_postal_code", "dealer_phone_number", "description", "placeholder1","placeholder2","series", "third_party_feature_codes", "video_url_duration",
       "video_url", "video_source_", "video_source"))
+      v.build_status(user_id: 1)
+      v.save
     end
   end
 
