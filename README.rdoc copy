@@ -14,7 +14,7 @@ Index needs this heavily.
 
 Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
 
-????? probably would work for status.  Updating whether the care is on a test drive or it's location...ect
+????? probably would work for status.  Updating whether the car is on a test drive or it's location...ect
 
 
 Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product:
@@ -64,9 +64,11 @@ where do we get the inventory? chris said he can get a CSV from an export servic
 do we get the same on incoming cars? Can I get one for other dealerships? What do i need to get access to the ford API.
 
 
-It has to recognize a car that is on hold in the business office and which sales person sent it there(color code: yellow for F and I?, red for sold, green for test drive?, plain for nothing. SOLD BUT NOT DELIEVERED STAYS, DELIEVRED GET REMOVED FROM THE DOM and moved into a purely achival list.) 
+It has to recognize a car that is on hold in the business office and which sales person sent it there(color code: yellow for F and I?, red for sold, green for test drive?, plain for nothing. SOLD BUT NOT DELIVERED STAYS, DELIVERED GET REMOVED FROM THE DOM and moved into a purely achival list.) 
 It has to tell the person what has been recently delivered and is no longer for sale 
+
 It has to recognize if a car was in the yard or at the off site garage 
+
 It should be able to tell if the car is on a test drive and which salesperson sent it there.
 
 It has to sort by year make and model(angular?)
@@ -90,4 +92,46 @@ Someday:
 in a perfect world there'd be a map of the lot with exact locations.
 
 Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days
+
+
+
+
+RAILS MODELS AND RELATIONSHIPS
+
+Add attr to Vehicle: 
+Location: either on-lot, off-lot, unset. default is unset.
+
+Vehicles have many notes
+
+Notes belong to an author and a Vehicle
+
+Note: User.id, Vehicle.id, Content
+
+Vehicles have many statuses
+
+Statuses have a User.id as Status Setter and a Vehicle.id
+
+Status types: Available, On Test Drive, In F and I, Sold, Delivered
+
+Vehicles have one status. 
+
+Available, On Test Drive, In F and I, Sold, Delivered
+If status is to be set to another the current status will be deleted
+(note should be created when status is created or changed)
+any vehicle whose status is not Available or Delivered goes on the calendar
+(when status is set to On Test Drive, In F and I, or Sold calender item is created
+when status is set to Available or Delivered Calendar item is destroyed)
+
+
+
+
+
+Users have many notes as authors through notes table
+Users have many statuses as setters through status table (this will be used to populate the calendar)(note should be created when status is created) 
+
+
+
+
+
+
 
