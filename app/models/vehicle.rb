@@ -1,9 +1,12 @@
 class Vehicle < ActiveRecord::Base
   validates :VIN, uniqueness: true
-  validates :storage, :inclusion => { :in => %w(on-lot off-lot unset)
+  validates :storage, :inclusion => { :in => %w(on-lot off-lot unset) }
 
   has_many :notes
   has_many :note_authors, through: :notes, source: :user
+
+  has_one :status
+  has_one :status_setter, through: :status, source: :user
 
   def self.import(file, new_or_used)
     # CSV.parse(file.tempfile.read.gsub ",http://", ', http://')
