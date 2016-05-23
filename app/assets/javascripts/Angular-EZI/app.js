@@ -1,60 +1,66 @@
 angular
-  .module('app', ['ui.router', 'ngResource'])
-  .config(function($stateProvider){
+  .module('app', ['ui.router', 'ngResource', 'templates'])
+  .config(function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise("/");
     $stateProvider
       .state('welcome', {
         url: '/welcome',
-        templateUrl: '#',
-        controller: 'LoginController'
+        templateUrl: 'welcome.html',
+        // controller: 'WelcomeController'
       })
-      .state('signup', {
+      .state('welcome.signin', {
+        url: '/signin',
+        templateUrl: 'signin.html',
+        // controller: 'LoginController'
+      })
+      .state('welcome.signup', {
         url: '/signup',
-        templateUrl: '#',
-        controller: 'RegistrationController'
+        templateUrl: 'signup.html',
+        // controller: 'RegistrationController'
       })
-      .state('vehicles', {
-        url: '/vehicles',
-        templateUrl: '#',
-        controller: 'VehiclesController'
+      .state('inventory', {
+        url: '/inventory/index',
+        templateUrl: 'vehicles.html',
+        // controller: 'VehiclesController'
       })
-      .state('vehicles.single', {
-        url: '/vehicles/:vin',
-        templateUrl: '#',
-        controller: 'VehiclesController'
+      .state('inventory.delivered', {
+        url: '/delivered',
+        templateUrl: 'vehicles.html',
+        // controller: 'VehiclesController'
       })
-      .state('vehicles.delivered', {
-        url: '/vehicles/delivered',
-        templateUrl: '#',
-        controller: 'VehiclesController'
+      .state('inventory.single', {
+        url: '/:vin',
+        templateUrl: 'vehicle.html',
+        // controller: 'VehiclesController'
       })
-      .state('user', {
+      .state('users', {
         url: '/users/:name',
-        templateUrl: '#',
-        controller: 'VehiclesController'
+        templateUrl: 'user.html',
+        // controller: 'UserController'
       })
       .state('admin', {
         url: '/admin',
-        templateUrl: '#',
-        controller: 'AdminController'
+        templateUrl: 'admin.html',
+        // controller: 'AdminController'
       })
       .state('admin.users', {
         url: '/users',
-        templateUrl: '#',
-        controller: 'UsersController'
+        templateUrl: 'users.html',
+        // controller: 'UsersController'
       })
-      .state('admin.dealership', {
+      .state('admin.analytics', {
         url: '/analytics',
-        templateUrl: '#',
-        controller: 'StatsController'
+        templateUrl: 'stats.html',
+        // controller: 'StatsController'
       })
       .state('admin.import', {
-        url: '/vehicleimport',
-        templateUrl: '#',
-        controller: 'ImportController'
+        url: '/inventory/import',
+        templateUrl: 'import.html',
+        // controller: 'ImportController'
       })
-      .state('admin.swap', {
-        url: '/swaplist',
-        templateUrl: '#',
-        controller: 'SwapController'
+      .state('admin.swaps', {
+        url: '/swaplists',
+        templateUrl: 'swaps.html',
+        // controller: 'SwapController'
       });
   });
