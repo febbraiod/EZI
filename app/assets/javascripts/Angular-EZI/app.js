@@ -28,11 +28,11 @@ angular
       .state('inventory', {
         url: '/inventory/index',
         templateUrl: 'vehicles.html',
-        controller: 'VehicleController'
+        controller: 'VehicleController as ctrl'
       })
       .state('inventory.delivered', {
         url: '/delivered',
-        templateUrl: 'vehicles.html',
+        templateUrl: 'delivered_vehicles.html',
         // controller: 'VehicleController'
       })
       .state('inventory.single', {

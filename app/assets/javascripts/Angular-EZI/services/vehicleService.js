@@ -1,10 +1,9 @@
-function VehicleService($http){
+function VehicleService($resource){
 
-  this.getVehicles = function(name){
-    // $http.get('http://0.0.0.0:8882/rest/vehicle); 
-    // this needs to call my rails api for all vehicles
-    // so i can pass it to the vehicle controller
-  };
+    var Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id');
+
+    this.getInventory = Vehicle.query(function(){});
+
 
 }
 
