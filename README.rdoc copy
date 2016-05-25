@@ -1,3 +1,10 @@
+Do next:
+
+Use components to make a nav bar (have two different nav bars admin-nav and user-nav) 
+and 
+to make the vehicle 'cards' for the index page(see learn component lab).
+
+
 Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
 
 Note for Me: The fucking CSV for used cars sucks. the fields didn't fill in correctly. fix this for the demo, but there has to be a better solution.
@@ -110,7 +117,7 @@ Note: User.id, Vehicle.id, Content
 
 Vehicles have one status. 
 
-Statuses have a User.id as Status Setter and a Vehicle.id
+Statuses have a User.id as Status Setter, a Vehicle.id, and a type
 
 Status types: Available, On Test Drive, In F and I, Sold, Delivered
 

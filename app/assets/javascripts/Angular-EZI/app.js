@@ -1,22 +1,29 @@
 angular
-  .module('app', ['ui.router', 'ngResource', 'templates'])
-  .config(function($stateProvider, $urlRouterProvider){
+  .module('app', ['ui.router', 'ngResource', 'templates', 'Devise'])
+  .config(function($stateProvider, $urlRouterProvider, AuthProvider){
     $urlRouterProvider.otherwise("/");
-    $stateProvider
+    $stateProvider //at somepoint I need to add permissions: https://www.theodo.fr/blog/2015/08/handling-basic-route-authorization-in-angularjs/
       .state('welcome', {
-        url: '/welcome',
+        url: '/',
         templateUrl: 'welcome.html',
         // controller: 'WelcomeController'
       })
       .state('welcome.signin', {
-        url: '/signin',
+        url: 'signin',
         templateUrl: 'signin.html',
-        // controller: 'LoginController'
+        controller: 'AuthCtrl as ctrl',
+        onEnter: ['$state', 'Auth', function($state, Auth){
+            Auth.currentUser().then(function (){
+                alert(Auth.currentUser());
+                console.log(Auth.currentUser());
+                $state.go('inventory');
+            });
+         }]
       })
       .state('welcome.signup', {
-        url: '/signup',
+        url: 'signup',
         templateUrl: 'signup.html',
-        // controller: 'RegistrationController'
+        controller: 'AuthCtrl',
       })
       .state('inventory', {
         url: '/inventory/index',
@@ -36,7 +43,13 @@ angular
       .state('users', {
         url: '/users/:name',
         templateUrl: 'user.html',
-        // controller: 'UserController'
+        controller: 'UserController as user',
+        resolve: {
+          user: function ($stateParams, UserService) {
+            // return UserService.getUser($stateParams.name); have to fix the api call in UserService
+            return {name: 'Billy'};
+          }
+        }
       })
       .state('admin', {
         url: '/admin',

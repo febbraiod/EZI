@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
+  root 'application#angular'
+
   devise_for :users
-  root 'application#index'
 
   get 'vehicles/upload' => 'data#upload'
   post 'vehicles/import' => 'data#import'

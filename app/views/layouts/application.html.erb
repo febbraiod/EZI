@@ -18,7 +18,8 @@ th, td {
 }
 </style>
 
-<%= yield %>
+<div ng-include="'_nav.html'"></div>
+<ui-view></ui-view>
 
 <%= javascript_include_tag 'application' %>
 </body>
