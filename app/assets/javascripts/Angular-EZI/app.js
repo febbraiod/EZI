@@ -26,19 +26,25 @@ angular
         controller: 'AuthCtrl',
       })
       .state('inventory', {
-        url: '/inventory/index',
-        templateUrl: 'vehicles.html',
-        controller: 'VehicleController as ctrl'
+        url: '/inventory',
+        templateUrl: 'inventory.html',
+        controller: 'InventoryController as ctrl'
       })
       .state('inventory.delivered', {
         url: '/delivered',
         templateUrl: 'delivered_vehicles.html',
-        // controller: 'VehicleController'
+        // controller: 'deliveredController'
       })
       .state('inventory.single', {
-        url: '/:vin',
+        url: '/:id',
         templateUrl: 'vehicle.html',
-        // controller: 'VehicleController'
+        controller: 'VehicleController as vehicle',
+        resolve: {
+          vehicle: function ($stateParams, VehicleService) {
+            v = VehicleService.getVehicle($stateParams.id);
+            return v;
+          }
+        }
       })
       .state('users', {
         url: '/users/:name',
