@@ -1,11 +1,5 @@
-function VehicleController(VehicleService) {
-  var ctrl= this;
-
-  this.vehicles = [];
-
-  this.vehicles = VehicleService.getInventory;
-
-
+function VehicleController(vehicle) {
+  this.data = vehicle;
 }
 
 angular
