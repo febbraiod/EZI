@@ -1,7 +1,9 @@
-<h1>I'm the SignUp page</h1>
+<h1>Register</h1>
 
-<p>I'll be a signup form</p>
+<form ng-submit="register()">
+  <input type="email" placeholder="Email" ng-model="user.email">
+  <input type="password" placeholder="Password" ng-model="user.password">
+  <input type="submit" value="Register">
+</form>
 
 <a href="#" ui-sref="welcome.signin">Already registered? Click here to go back to the sign in page</a>
-
-<p><%="Erb works here" if true %> </p>
