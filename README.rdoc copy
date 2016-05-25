@@ -1,8 +1,14 @@
 Do next:
 
-Use components to make a nav bar (have two different nav bars admin-nav and user-nav) 
-and 
-to make the vehicle 'cards' for the index page(see learn component lab).
+make the vehicle 'cards' for the index page(see learn component lab).
+populate vehicle index
+
+
+register is not working but i'd like to save this for the end.
+this might help:
+https://learn.co/tracks/full-stack-web-development/angularjs/custom-services/angular-resource
+need to also include name in sign up form
+
 
 
 Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
