@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524141820) do
+ActiveRecord::Schema.define(version: 20160525204320) do
 
   create_table "notes", force: :cascade do |t|
     t.integer  "user_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160524141820) do
     t.string   "transmission"
     t.string   "new_or_used"
     t.string   "storage",        default: "unset"
+    t.boolean  "delivered",      default: false
   end
 
 end

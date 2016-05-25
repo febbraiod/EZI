@@ -1,7 +1,20 @@
 Do next:
 
-make the vehicle 'cards' for the index page(see learn component lab).
-populate vehicle index
+Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
+
+Index needs this heavily.
+1) Inventory Index should split into use or new...there is a way to set a dropdown filter(there should be alot of drop down filters.
+one for each option:
+sunroof,
+leather,
+(look for important ones)
+statuses:
+available, test drive, sold, fandi
+new
+used
+price ranges?
+mileages?
+
 
 
 register is not working but i'd like to save this for the end.
@@ -10,14 +23,14 @@ https://learn.co/tracks/full-stack-web-development/angularjs/custom-services/ang
 need to also include name in sign up form
 
 
-
 Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
 
 Note for Me: The fucking CSV for used cars sucks. the fields didn't fill in correctly. fix this for the demo, but there has to be a better solution.
 
+
 need a way to upload a picture and push the url into the image picture url array(might be a decent place to use angular verification)
 
-how can we tell where the vehicle is?(off-lot or on)?  This can't be imported.  Should there be a way to insert just one vehicle at a time? If so we need a callback on the VIN validation to fire an update if the vehcile is being imported with more info later.
+how can we tell where the vehicle is?(off-lot or on)?  This can't be imported.  Should there be a way to insert just one vehicle at a time? If so we need a callback on the VIN validation to fire an update if the vehicle is being imported with more info later.
 
 requires:
 
@@ -27,27 +40,17 @@ Index needs this heavily.
 
 Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
 
-????? probably would work for status.  Updating whether the car is on a test drive or it's location...ect
-
-
-Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product:
-
-not sure how but duh.
-
+might need updating for vehicles for admin in case any cars come in with bad data
+probably would also work for status.  Updating whether the car is on a test drive or it's location...ect
 
 Data should be validated in Angular before submission:
 
-this is just on like a form input angular will knwo if the data is in the correct format. the quesiton is where am i going to use a form?
-
-
-Must talk to the Rails backend using $http and Services:
-
-this is should just be calling to our DB in rails and getting JSON like the API jQuery stuff using angular.
+this is just on like a form input angular will knwo if the data is in the correct format. the quesiton is where am i going to use a form? Sign in and sign up...also vechile adding or editing.
 
 
 5 pages:
 
-Many of these pages may only be for the admin or manager. The fact is you cannot trust the user. this app is more for the manager to track the cars and the sales people. The sales people maybe only need to set and remove statuses and notes.
+Many of these pages may only be for the admin or manager. The fact is you cannot trust the user. this app is more for the manager to track the cars and the sales people. The sales people maybe only need to set and remove statuses, make notes, and veiw data, they are getting a personal calender as well.
 
 1) Inventory Index should split into use or new...there is a way to set a dropdown filter(there should be alot of drop down filters. This see all with sunroof, or see all in f and i))
 
@@ -93,7 +96,7 @@ use a partial to render each car
 
 Car Attrs: Year make model color MSRP and dealer invoice
 Has many: options (equipment)
-          statuses: FI, TD, On Lot, Sold, Delivered
+          statuses: FI, TD, Sold, Delivered
           has_one: photo(paperclip)
           has_one: invoice(paperclip)
           should attached a sales person's name when that status is created. When status is resolved this association get deleted entirely(best solution?)
@@ -125,10 +128,18 @@ Vehicles have one status.
 
 Statuses have a User.id as Status Setter, a Vehicle.id, and a type
 
-Status types: Available, On Test Drive, In F and I, Sold, Delivered
+Status types: Available, On Test Drive, In F and I, Sold
 
 
-Available, On Test Drive, In F and I, Sold, Delivered
+
+for delivered it will be a true false attr on vehicle.  This will delete any status(which should just be 'sold' then move the vehicle from index to delivered list)
+
+
+this might help for the delivered list: just make a filtered list 
+by delvered? This way I might be able to use the Inventory controller instead of making a new one for delvered.
+https://learn.co/tracks/full-stack-web-development/angularjs/angular-filters/what-is-a-filter 
+
+Available, On Test Drive, In F and I, Sold
 If status is to be set to another the current status will be deleted
 (note should be created when status is created or changed)
 any vehicle whose status is not Available or Delivered goes on the calendar
