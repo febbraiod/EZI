@@ -13,9 +13,11 @@ function AuthCtrl($scope, $state, Auth){
     });
   };
 
+  // getting 422 unprossable entity..
+  // thinking about over writing Devise's Registration controller
   $scope.register = function() {
     Auth.register($scope.user).then(function(){
-      $state.go('home');
+      $state.go('inventory');
     });
   };
 }

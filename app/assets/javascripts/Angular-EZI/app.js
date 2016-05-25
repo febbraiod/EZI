@@ -28,17 +28,17 @@ angular
       .state('inventory', {
         url: '/inventory/index',
         templateUrl: 'vehicles.html',
-        // controller: 'VehiclesController'
+        controller: 'VehicleController'
       })
       .state('inventory.delivered', {
         url: '/delivered',
         templateUrl: 'vehicles.html',
-        // controller: 'VehiclesController'
+        // controller: 'VehicleController'
       })
       .state('inventory.single', {
         url: '/:vin',
         templateUrl: 'vehicle.html',
-        // controller: 'VehiclesController'
+        // controller: 'VehicleController'
       })
       .state('users', {
         url: '/users/:name',
