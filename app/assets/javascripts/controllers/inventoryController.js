@@ -3,6 +3,7 @@ function InventoryController(VehicleService) {
 
   ctrl.vehicles = [];
   ctrl.vehicles = VehicleService.getInventory;
+  // ctrl.dropdown.value = 'all';
 
 }
 

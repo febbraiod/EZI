@@ -1,18 +1,0 @@
-{:uriI"file://app/assets/javascripts/templates/_admin_nav.html?type=text/ng-html&id=571f3400845b8519997d065e10637d5a0a3d90e6c0eac227d733e9c9a24526cd:ET:load_pathI"app/assets/javascripts;T:filenameI"5app/assets/javascripts/templates/_admin_nav.html;T:	nameI"templates/_admin_nav;T:logical_pathI"templates/_admin_nav.html;T:content_typeI"text/ng-html;T:sourceI"y
-  <ul>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signin">Log In</a></li>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signup">Register</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="admin">Inventory Calendar</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="admin.users">Staff Management</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="admin.analytics">Analylics</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="admin.swaps">Swaps</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="admin.import">Update Inventory</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="inventory">Main Inventory</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
-    <li ng-if="nav.signedIn()"><a ng-click="nav.logout()">Log Out</a></li>
-  </ul>
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Cfile-digest://app/assets/javascripts/templates/_admin_nav.html;TT:charsetI"
-utf-8;F:digest"%©ÍE.‰–qaËø˜^ó±1•Û¸÷¤·Rãûâ³íÉ!”:lengthiy:dependencies_digest"%|ä0+¿Èåä¦Omÿé±Œ´¡4Rx•ÈZÙL:idI"E571f3400845b8519997d065e10637d5a0a3d90e6c0eac227d733e9c9a24526cd;F:
-mtimel+!¾DW
