@@ -1,3 +1,15 @@
 <h1>I am the detailed vehicle show page.  I have tabs, details, notes, invoice </h1>
 
-{{vehicle.data}}
+
+<tabs>
+    <tab href="#" label='Vehicle Details'>
+        <p>{{vehicle.data}}</p>
+        <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.users">edit this vehicle</a></li>
+    </tab>
+    <tab label='Notes'>
+        <p>notes page</p>
+    </tab>
+    <tab label='Invoice'>
+        <p>invoice</p>
+    </tab>
+</tabs>

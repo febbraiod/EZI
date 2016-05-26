@@ -7,11 +7,14 @@
       <option value="all">All</option>
       <option value="New">New</option>
       <option value="Used">Used</option>
+      <option value="moonroof">Options: Sunroof/Moonroof</option>
+
+
     </select>
 </form>
 {{dropdownvalue}}
 <br>
-  Search: <input ng-model="ctrl.search" />
+  Search Filtered List: <input ng-model="ctrl.search" />
   <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value ">
       <vehicle-card
       year="vehicle.year",
@@ -21,7 +24,10 @@
       msrp="vehicle.msrp",
       stock="vehicle.stock_no",
       vin="vehicle.VIN",
-      id="vehicle.id">
+      id="vehicle.id",
+      neworused ="vehicle.new_or_used",
+      odometer= "vehicle.odometer",
+      options= "vehicle.options">
       </vehicle-card>
   </li>
 </ul>

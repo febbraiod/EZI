@@ -1,17 +1,41 @@
 Do next:
 
-Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
+set up show page:
 
-Index needs this heavily.
-1) Inventory Index should split into use or new...there is a way to set a dropdown filter(there should be alot of drop down filters.
+three tabs:
+
+details
+notes
+invoice
+
+from the details and notes tab there should be the option to set a new status or resolve and old one, and a link to the edit page for admins
+
+edit vehicle page:
+
+Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
+
+might need updating for vehicles for admin in case any cars come in with bad data
+
+Data should be validated in Angular before submission:
+
+this is just on like a form input angular will knwo if the data is in the correct format. the quesiton is where am i going to use a form? Sign in and sign up...also vechile adding or editing.
+
+
+
+
+probably would also work for status
+
+
+
+
+
+
+drop down filters.
 one for each option:
-sunroof,
 leather,
 (look for important ones)
 statuses:
 available, test drive, sold, fandi
-new
-used
 price ranges?
 mileages?
 
@@ -21,6 +45,8 @@ register is not working but i'd like to save this for the end.
 this might help:
 https://learn.co/tracks/full-stack-web-development/angularjs/custom-services/angular-resource
 need to also include name in sign up form
+
+or we could just do registration from the rails side
 
 
 Note for Chris: the used autotrader doesn't have the headers, these must by copied over to from the 'new' file to work with the current setup.
@@ -34,18 +60,6 @@ how can we tell where the vehicle is?(off-lot or on)?  This can't be imported.  
 
 requires:
 
-Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due:
-
-Index needs this heavily.
-
-Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
-
-might need updating for vehicles for admin in case any cars come in with bad data
-probably would also work for status.  Updating whether the car is on a test drive or it's location...ect
-
-Data should be validated in Angular before submission:
-
-this is just on like a form input angular will knwo if the data is in the correct format. the quesiton is where am i going to use a form? Sign in and sign up...also vechile adding or editing.
 
 
 5 pages:
@@ -81,18 +95,15 @@ do we get the same on incoming cars? Can I get one for other dealerships? What d
 
 
 It has to recognize a car that is on hold in the business office and which sales person sent it there(color code: yellow for F and I?, red for sold, green for test drive?, plain for nothing. SOLD BUT NOT DELIVERED STAYS, DELIVERED GET REMOVED FROM THE DOM and moved into a purely achival list.) 
+
 It has to tell the person what has been recently delivered and is no longer for sale 
 
 It has to recognize if a car was in the yard or at the off site garage 
 
 It should be able to tell if the car is on a test drive and which salesperson sent it there.
 
-It has to sort by year make and model(angular?)
-
 Need a note system as well.(put on same page with Invoice)
 
-
-use a partial to render each car
 
 Car Attrs: Year make model color MSRP and dealer invoice
 Has many: options (equipment)

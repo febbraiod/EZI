@@ -9,31 +9,37 @@ var VehicleCard = {
       msrp: '=',
       stock: '=',
       vin: '=',
-      id: '='
+      id: '=',
+      neworused: '=',
+      odometer: '=',
+      options: '='
     },
   template: [
   "<div class = 'vehicle_card'>", //id='test_drive' notes='will add to class based on status then i can get rid of the id here'
-    "<div class='card_left'>",
-      "<div class='card_header'>",
-        "<h4>{{ctrl.year}} {{ctrl.make}} {{ctrl.model}}</h4> ",
+    "<div class='card_section'>",
+    "<div class='card_header'>",
+      "<h4>{{ctrl.year}} {{ctrl.make}} {{ctrl.model}}</h4> ",
       "<h5>{{ctrl.color}}</h5>",
     "</div>",
-    "<div class='car_picture'>",
-      "i'm a picture<!-- last uploaded vehicle pic goes here or if there isn't one we need a place holder -->",
-    "</div>",
-    "<div>",
+      "<div class='car_picture'>",
+        "<p>i'm a picture</p>",
+        // <!-- last uploaded vehicle pic goes here or if there isn't one we need a place holder -->",
+      "</div>",
       "<p>MSRP: {{ctrl.msrp}}</p>",
       "<p>Vin: {{ctrl.vin}}</p>",
-      "<p>Stock Number: {{ctrl.stock}}</p>",
-      "<a href='#/inventory/{{ctrl.id}}'>I want to change this to Stock# for details link at some point</a>",
+      // eventually i'd like the url to use :stock_no rather than :id
+      "<p>Stock Number: <a href='#/inventory/{{ctrl.id}}'>{{ctrl.stock}}</a></p>",
     "</div>",
-  "</div>",
-
-  "<div class='card_right'>",
-    "<p>Status: {{ctrl.status}}</p>",
-    "<p>Status applied by: {{ctrl.status.user.name}}</p>",
-  "</div>",
-"</div>"
+    "<div class='card_section'>",
+      "<p>ownership: {{ctrl.neworused}}</p>",
+      "<p>odometer: {{ctrl.odometer}}</p>",
+      "<p>Status: {{ctrl.status}}</p>",
+      "<p>Status applied by: {{ctrl.status.user.name}}</p>",
+    "</div>",
+    "<div class='card_section'>",
+      "<p>Options(abv): {{ctrl.options}}</p>",
+    "</div>",
+  "</div>"
     ].join(''),
   controllerAs: 'ctrl'
   // not sure how the data will be nested yet so i guessed
