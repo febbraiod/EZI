@@ -38,11 +38,13 @@
 }
 
 .vehicle_card{
+  border:1px solid black;
   margin: 10px 0 5px 0;
-  padding: 10px;
+  padding: 5px 0 0 10px;
   background: white;
-  width: 100%;
+  width: 75%;
   height: 250px;
+
 }
 
 .card_header h4{display: inline;}
@@ -55,24 +57,17 @@
   background: gray;
 }
 
-.vehicle_card .card_left{
-  display: inline-block;
+/*can i maybe use bootstrap to seperate the card into three columns?*/
+.vehicle_card .card_section{
+    display: inline-block;
+    width: 30%;
+    height: 235px;
+    vertical-align: top;
+    overflow: hidden;
 }
 
-.vehicle_card .card_right{
-  display: inline-block;
-  position: relative;
-  left: 20px;
-  bottom: 150px;
-}
 
-.vehicle-options {
-  margin: 10px 0 5px 0;
-  padding: 10px;
-  background: white;
-  width: 100%;
-  height: 250px;
-}
+
 
 #test_drive{
   background: green;
@@ -88,4 +83,8 @@
 
 .message {
   color: red;
+}
+
+ul{
+  list-style-type: none
 }

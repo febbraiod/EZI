@@ -41,8 +41,7 @@ angular
         controller: 'VehicleController as vehicle',
         resolve: {
           vehicle: function ($stateParams, VehicleService) {
-            v = VehicleService.getVehicle($stateParams.id);
-            return v;
+            return VehicleService.getVehicle($stateParams.id);
           }
         }
       })

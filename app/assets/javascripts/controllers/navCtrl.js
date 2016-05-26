@@ -7,7 +7,7 @@ angular
       function($scope, Auth, $state){
           var nav = this;
           nav.current_user = 'unset';
-          nav.role = 'unset';
+          nav.userrole = 'unset';
 
           nav.signedIn = Auth.isAuthenticated;
           nav.logout = Auth.logout;
@@ -18,11 +18,10 @@ angular
 
           $scope.$on('devise:new-registration', function (e, user){
             $scope.user = user;
-            alert('Welcome Guest');
           });
 
           $scope.$on('devise:login', function (e, user){
-            nav.role = user.role;
+            nav.userrole = user.role;
             nav.current_user = user;
             $scope.user = user;
           });
