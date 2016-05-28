@@ -1,12 +1,15 @@
 Do next:
 
+
 set up show page:
 
 three tabs:
 
-details
-notes
-invoice
+details - data is there need to get layout and photos working. Also need to set up serializer and parse options for this and index page.
+
+notes - see legal-aid
+
+invoice - install paperclip
 
 from the details and notes tab there should be the option to set a new status or resolve and old one, and a link to the edit page for admins
 

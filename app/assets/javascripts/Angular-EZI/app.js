@@ -35,12 +35,12 @@ angular
         templateUrl: 'delivered_vehicles.html',
         // controller: 'deliveredController'
       })
-      .state('inventory.single', {
-        url: '/:id',
+      .state('vehicle', {
+        url: '/vehicle/:id',
         templateUrl: 'vehicle.html',
-        controller: 'VehicleController as vehicle',
+        controller: 'VehicleController as ctrl',
         resolve: {
-          vehicle: function ($stateParams, VehicleService) {
+          vehicle_data: function ($stateParams, VehicleService) {
             return VehicleService.getVehicle($stateParams.id);
           }
         }
