@@ -1,8 +1,12 @@
 function InventoryController(VehicleService) {
-  var ctrl= this;
+  var ctrl = this;
 
   ctrl.vehicles = [];
-  ctrl.vehicles = VehicleService.getInventory;
+ 
+  VehicleService.getInventory.then(function(response) {
+    debugger
+    ctrl.vehicles = response;
+  });
   // ctrl.dropdown.value = 'all';
 
 }

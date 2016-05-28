@@ -16,7 +16,7 @@
 <br>
   Search Filtered List: <input ng-model="ctrl.search" />
   <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value ">
-      <vehicle-card
+      <stock-card
       year="vehicle.year",
       make="vehicle.make",
       model="vehicle.model",
@@ -27,8 +27,9 @@
       id="vehicle.id",
       neworused ="vehicle.new_or_used",
       odometer= "vehicle.odometer",
-      options= "vehicle.options">
-      </vehicle-card>
+      options= "vehicle.options",
+      dealerprice= "vehicle.dealer_price">
+      </stock-card>
   </li>
 </ul>
 <!-- this ui-sref here is a method that makes a api call

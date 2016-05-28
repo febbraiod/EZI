@@ -3,7 +3,7 @@ var tabs = {
     template: [
     '<div class="tabs">',
       '<ul class ="tabs__list">',
-        '<li ng-repeat="tab in $ctrl.tabs" ng-click="$ctrl.selectTab($index);"><a>{{tab.label}}</a></li>',
+        '<li ng-repeat="tab in $ctrl.tabs" ng-click="$ctrl.selectTab($index);"><a class="">{{tab.label}}</a></li>',
       '</ul>',
       '<ng-transclude></ng-transclude>',//this means whatever already exists
                                         //in the DOM where this directive or component

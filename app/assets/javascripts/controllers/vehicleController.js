@@ -1,5 +1,5 @@
-function VehicleController(vehicle) {
-  this.data = vehicle;
+function VehicleController(vehicle_data) {
+  this.vehicle_data = vehicle_data;
 }
 
 angular
