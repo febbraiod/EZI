@@ -1,4 +1,4 @@
-function VehicleService($resource, $http){
+function vehicleService($resource, $http){
 
     var Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id', {id: '@id'});
 
@@ -32,4 +32,4 @@ function VehicleService($resource, $http){
 
 angular
   .module('app')
-  .service('VehicleService', VehicleService);
+  .service('vehicleService', vehicleService);

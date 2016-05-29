@@ -40,8 +40,8 @@ angular
         templateUrl: 'vehicle.html',
         controller: 'VehicleController as ctrl',
         resolve: {
-          vehicle_data: function ($stateParams, VehicleService) {
-            return VehicleService.getVehicle($stateParams.id);
+          vehicle_data: function ($stateParams, vehicleService) {
+            return vehicleService.getVehicle($stateParams.id);
           }
         }
       })

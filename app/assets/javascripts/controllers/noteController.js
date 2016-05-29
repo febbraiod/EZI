@@ -1,4 +1,4 @@
-function NoteController(VehicleService) {
+function NoteController() {
   var ctrl= this;
   
 
@@ -6,4 +6,4 @@ function NoteController(VehicleService) {
 
 angular
   .module('app')
-  .controller('InventoryController', InventoryController);
+  .controller('NoteController', NoteController);
