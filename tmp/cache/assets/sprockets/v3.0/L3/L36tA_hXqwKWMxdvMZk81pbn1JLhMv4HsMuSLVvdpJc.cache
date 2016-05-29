@@ -1,20 +1,0 @@
-{:uriI"‡file://app/assets/javascripts/templates/_nav.html?type=text/ng-html&id=8c190c5a2bdf535bf8fc3e744589740eab496359424cbe990c93391365e2c644:ET:load_pathI"app/assets/javascripts;T:filenameI"/app/assets/javascripts/templates/_nav.html;T:	nameI"templates/_nav;T:logical_pathI"templates/_nav.html;T:content_typeI"text/ng-html;T:sourceI"ü<div ng-controller="NavCtrl as nav">
-  <ul>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signin">Log In</a></li>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signup">Register</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'admin'"><a href="#" ui-sref="admin">Inventory Calendar</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'admin'"><a href="#" ui-sref="admin.users">Staff Management</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'admin'"><a href="#" ui-sref="admin.analytics">Analylics</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'admin'"><a href="#" ui-sref="admin.swaps">Swaps</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'admin'"><a href="#" ui-sref="admin.import">Update Inventory</a></li>
-    <li ng-if="nav.signedIn() && nav.role == 'user'"><a href="#" ui-sref="users({name: nav.current_user.name})">Your Calendar</a></li>
-    <li ng-if="nav.signedIn() && (nav.role == 'admin' || nav.role == 'user')"><a href="#" ui-sref="inventory">Main Inventory</a></li>
-    <li ng-if="nav.signedIn() && (nav.role == 'admin' || nav.role == 'user')"><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
-    <li ng-if="nav.signedIn()"><a ng-click="nav.logout()">Log Out</a></li>
-  </ul>
-</div>
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"=file-digest://app/assets/javascripts/templates/_nav.html;TT:charsetI"
-utf-8;F:digest"%ñK³îæ§C<Ø±ø×Â¯Üà•h0òDÐ~¨[IÑcø:lengthiü:dependencies_digest"%éHØž|¯RñMOuo(y¤g2¬ÍÏÓ¥ã˜p:idI"E8c190c5a2bdf535bf8fc3e744589740eab496359424cbe990c93391365e2c644;F:
-mtimel+ÉÛDW
