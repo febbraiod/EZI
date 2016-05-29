@@ -12,7 +12,7 @@ module Api
         render json: @vehicle
       end
 
-      def create 
+      def create
         @vehicle = Vehicle.new(vehicle_params) 
         if @vehicle.save 
           render json: @vehicle

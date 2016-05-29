@@ -13,8 +13,9 @@ module Api
         render json: @note
       end
 
-      def create 
-        @note = Note.new(note_params) 
+      def create
+        @note = Note.new(note_params)
+        @note.user = current_user
         if @note.save 
           render json: @note
         end 
