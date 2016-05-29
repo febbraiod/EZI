@@ -4,10 +4,19 @@
 <tabs>
     <tab label='Vehicle Details'>
         <p>{{ctrl.vehicle_data.vehicle}}</p>
-        <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.users">edit this vehicle</a></li>
-    </tab>
-    <tab label='Notes'>
-        <p>{{ctrl.vehicle_data.vehicle.notes}}</p>
+        <ul>
+            <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes" >{{note.user}} on {{note.created_at}}: {{note.content}}</li>
+        </ul>
+
+        <div ng-controller='NoteController as noteCtrl'>
+            <h1>Add note</h1>
+            <form validate ng-submit="noteCtrl.addNote()">
+                <label>Content</label>
+                <input type="text" ng-model="noteCtrl.note.content">
+                <input type="submit" value="Add Note">
+            </form>
+        </div>
+
     </tab>
     <tab label='Invoice'>
         <p>invoice</p>

@@ -1,5 +1,9 @@
-function VehicleController(vehicle_data) {
+function VehicleController($scope, vehicle_data) {
   this.vehicle_data = vehicle_data;
+  this.vehicle_notes = [];
+
+  debugger
+  // this.vehicle_notes = vehicle_data.vehicle.notes;
 }
 
 angular

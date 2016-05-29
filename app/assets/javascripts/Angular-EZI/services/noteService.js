@@ -1,9 +1,10 @@
-function noteService($resource){
+function noteService($resource, $http){
 
-    var Note = $resource('http://localhost:3000/api/v1/notes/:id', {id: '@id'});
+    Note = $resource('http://localhost:3000/api/v1/notes/:id.json', {id: '@id'});
 
 }
 
 angular
   .module('app')
   .service('noteService', noteService);
+
