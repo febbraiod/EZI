@@ -1,10 +1,11 @@
 <h1>I'm the Sign In page</h1>
+<p>need an error message for when sign in fails</p>
+
 
 <form ng-submit="login()">
   <input type="email" placeholder="Email" ng-model="user.email">
   <input type="password" placeholder="Password" ng-model="user.password">
   <input type="submit" value="Log In">
 </form>
-
 <a ui-sref="welcome.signup">Not registered?</a>
 
