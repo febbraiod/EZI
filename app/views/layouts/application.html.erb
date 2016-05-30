@@ -18,8 +18,10 @@ th, td {
 }
 </style>
 
+<div ng-controller="NavCtrl as nav">
 <div ng-include="'_nav.html'"></div>
 <ui-view></ui-view>
+</div>
 
 <%= javascript_include_tag 'application' %>
 </body>

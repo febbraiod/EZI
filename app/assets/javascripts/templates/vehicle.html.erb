@@ -5,7 +5,8 @@
     <tab label='Vehicle Details'>
         <p>{{ctrl.vehicle_data.vehicle}}</p>
         <ul>
-            <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes" >{{note.user}} on {{note.created_at}}: {{note.content}}</li>
+            <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes">{{note.user}} on {{note.created_at}}: {{note.content}} 
+            <a href='#' ng-if="nav.userrole === 'admin'">for delete button: {{note.id}}</a></span></li>
         </ul>
 
         <div ng-controller='NoteController as noteCtrl'>
