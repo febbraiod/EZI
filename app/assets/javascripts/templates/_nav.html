@@ -1,5 +1,4 @@
-<div ng-controller="NavCtrl as nav">
-  <ul>
+    <ul>
     <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signin">Log In</a></li>
     <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signup">Register</a></li>
     <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin">Inventory Calendar</a></li>
@@ -12,4 +11,4 @@
     <li ng-if="nav.signedIn() && (nav.userrole == 'admin' || nav.userrole == 'user')"><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
     <li ng-if="nav.signedIn()"><a href="#" ng-click="nav.logout()">Log Out</a></li>
   </ul>
-</div>
+
