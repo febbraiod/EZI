@@ -13,6 +13,13 @@ function NoteController($stateParams, $state, noteService) {
     });
   };
 
+  ctrl.removeNote = function(note){
+    ctrl.note.id = note.id;
+    ctrl.note.$delete(function() {
+      $state.reload();
+    });
+  };
+
 
 
 }
