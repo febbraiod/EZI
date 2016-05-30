@@ -4,12 +4,14 @@
 <tabs>
     <tab label='Vehicle Details'>
         <p>{{ctrl.vehicle_data.vehicle}}</p>
-        <ul>
-            <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes">{{note.user}} on {{note.created_at}}: {{note.content}} 
-            <a href='#' ng-if="nav.userrole === 'admin'">for delete button: {{note.id}}</a></span></li>
-        </ul>
-
         <div ng-controller='NoteController as noteCtrl'>
+            <ul>
+                <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes">
+                    {{note.user}} on {{note.created_at}}: {{note.content}} 
+                    <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">for delete button</button></span>
+                </li>
+            </ul>
+
             <h1>Add note</h1>
             <form validate ng-submit="noteCtrl.addNote()">
                 <label>Content</label>

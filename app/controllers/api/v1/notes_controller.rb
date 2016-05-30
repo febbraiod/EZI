@@ -28,8 +28,8 @@ module Api
         end 
       end
 
-      def destory 
-        respond_with Note.destroy(params[:id]) # not sure about this
+      def destroy
+        respond_with Note.destroy(params[:id]) # not sure about this but it worked
       end
 
 
