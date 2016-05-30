@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   namespace :api, defaults:{format: :json} do
     namespace :v1 do
       resources :vehicles
-      resources :notes
+      resources :notes, only: [:create, :destroy]
+      resources :statuses
     end
   end
 end

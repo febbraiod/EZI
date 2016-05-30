@@ -1,27 +1,38 @@
 <h1>I am the detailed vehicle show page.  I have tabs, details, notes, invoice </h1>
 
-
 <tabs>
+
     <tab label='Vehicle Details'>
-        <p>{{ctrl.vehicle_data.vehicle}}</p>
-        <div ng-controller='NoteController as noteCtrl'>
-            <ul>
-                <li ng-repeat="note in ctrl.vehicle_data.vehicle.notes">
-                    {{note.user}} on {{note.created_at}}: {{note.content}} 
-                    <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">for delete button</button></span>
-                </li>
-            </ul>
-
-            <h1>Add note</h1>
-            <form validate ng-submit="noteCtrl.addNote()">
-                <label>Content</label>
-                <input type="text" ng-model="noteCtrl.note.content">
-                <input type="submit" value="Add Note">
-            </form>
+            <div style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
+            <h3>{{ctrl.vehicle_data.vehicle.year}} {{ctrl.vehicle_data.vehicle.make}} {{ctrl.vehicle_data.vehicle.model}}</h3>
+            <p>{{ctrl.vehicle_data.vehicle.VIN}}</p>
+            <p>{{ctrl.vehicle_data.vehicle.options}}</p>
+            <p>Status: {{ctrl.vehicle_data.vehicle.status.status}}</p>
+            <p>Applied by: {{ctrl.vehicle_data.vehicle.status.user}}</p>
         </div>
-
+        <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed width bootstrap -->
+            <div ng-controller='NoteController as noteCtrl'>
+                <h3>Add note</h3>
+                <form validate ng-submit="noteCtrl.addNote()">
+                    <label>Content</label><br>
+                    <input type="text" ng-model="noteCtrl.note.content">
+                    <input type="submit" value="Add Note">
+                </form>
+                <h3>Notes:</h3>
+                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at'">
+                    {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+                    <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">for delete button</button></span>
+                </p>
+            </div>
+        </div>
     </tab>
+
     <tab label='Invoice'>
         <p>invoice</p>
     </tab>
+
 </tabs>
+
+<!-- example vechile obj: -->
+
+<!-- {"id":2823,"stock_no":11646,"year":2017,"make":"Ford","model":"Escape","VIN":"1FMCU9JD2HUA30978","odometer":15,"msrp":34850,"dealer_price":34259,"color":"Shadow Black","interior_color":"","photo_url_list":"[]","engine":"EcoBoost 1.5L I4 GTDi DOHC Turbocharged VCT","drive_train":"4WD","fuel":"Gasoline","body_type":"4D Sport Utility","options":"Equipment Group 300A,3.51 Axle Ratio,Wheels: 18\" Sparkle Nickel Painted Aluminum,Heated Leather-Trimmed Buckets w/60/40 Rear Seat,Radio: AM/FM Single CD/MP3,Adaptive Cruise Control,Voice-Activated Touchscreen Navigation System,Panoramic Vista Roof,Black Roof-Rail Cross Bars,All-Weather Floor Mats (Set of 4),SYNC 3 Communications & Entertainment System,4-Wheel Disc Brakes,Air Conditioning,Electronic Stability Control,Front Bucket Seats,Front Center Armrest,Leather Shift Knob,Spoiler,Tachometer,ABS brakes,Adjustable head restraints: driver and passenger w/tilt,Automatic temperature control,Blind spot sensor,Brake assist,Bumpers: body-color,CD player,Delay-off headlights,Driver door bin,Driver vanity mirror,Dual front impact airbags,Dual front side impact airbags,Emergency communication system,Four wheel independent suspension,Front anti-roll bar,Front dual zone A/C,Front fog lights,Front reading lights,Fully automatic headlights,Garage door transmitter,Heated door mirrors,Heated front seats,Illuminated entry,Knee airbag,Low tire pressure warning,MP3 decoder,Memory seat,Occupant sensing airbag,Outside temperature display,Overhead airbag,Overhead console,Panic alarm,Passenger door bin,Passenger vanity mirror,Power door mirrors,Power driver seat,Power passenger seat,Power steering,Power windows,Radio data system,Rear anti-roll bar,Rear reading lights,Rear seat center armrest,Rear window defroster,Rear window wiper,Remote keyless entry,Roof rack: rails only,Security system,Speed control,Speed-sensing steering,Split folding rear seat,Steering wheel mounted audio controls,Telescoping steering wheel,Tilt steering wheel,Traction control,Trip computer,Turn signal indicator mirrors,Variably intermittent wipers,Auto-dimming Rear-View mirror,10 Speakers,Compass,AM/FM radio: SiriusXM","transmission":"6-Speed Automatic","new_or_used":"New","storage":"unset","delivered":false,"notes":[{"id":1,"user":"Admin","content":"I'm a test note","created_at":"2016-05-27T14:27:34.487Z"},{"id":2,"user":"Unknown","content":"test","created_at":"2016-05-29T15:57:38.715Z"},{"id":4,"user":"Unknown","content":"test","created_at":"2016-05-29T16:12:05.013Z"},{"id":10,"user":"Admin","content":"why doesn't this immediately show?","created_at":"2016-05-29T17:38:17.417Z"},{"id":14,"user":"Admin","content":"testing bindings","created_at":"2016-05-30T15:14:31.155Z"},{"id":16,"user":"Admin","content":"testing merge success","created_at":"2016-05-30T16:16:21.990Z"}],"status":{"id":1,"status":"Available","user":"Admin"}} -->
