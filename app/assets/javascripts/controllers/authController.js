@@ -1,4 +1,4 @@
-function AuthCtrl($scope, $state, Auth){
+function AuthController($scope, $state, Auth){
 
   var config = {
       headers: {
@@ -24,4 +24,4 @@ function AuthCtrl($scope, $state, Auth){
 
 angular
   .module('app')
-  .controller('AuthCtrl', AuthCtrl);
+  .controller('AuthController', AuthController);

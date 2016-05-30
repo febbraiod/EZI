@@ -11,7 +11,7 @@ angular
       .state('welcome.signin', {
         url: 'signin',
         templateUrl: 'signin.html',
-        controller: 'AuthCtrl as ctrl',
+        controller: 'AuthController as ctrl',
         onEnter: ['$state', 'Auth', function($state, Auth){
             Auth.currentUser().then(function (){
                 alert(Auth.currentUser());
@@ -23,7 +23,7 @@ angular
       .state('welcome.signup', {
         url: 'signup',
         templateUrl: 'signup.html',
-        controller: 'AuthCtrl',
+        controller: 'AuthController',
       })
       .state('inventory', {
         url: '/inventory',

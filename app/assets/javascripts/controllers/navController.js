@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('NavCtrl', [
+  .controller('NavController', [
       '$scope',
       'Auth',
       '$state',
@@ -36,7 +36,7 @@ angular
 // Started with this but it threw an error 
 // sucks because i like this format better:
 
-//function NavCtrl($scope, Auth){
+//function NavController($scope, Auth){
 //   nav = this;
 
 //   nav.signIn = Auth.isAuthenticated;
@@ -67,4 +67,4 @@ angular
 
 // angular
 //   .module('app')
-//   .controller('NavCtrl', NavCtrl);
+//   .controller('NavController', NavController);
