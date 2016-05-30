@@ -1,16 +1,16 @@
 angular
   .module('app')
-  .controller('NavController', [
+  .controller('SessionController', [
       '$scope',
       'Auth',
       '$state',
       function($scope, Auth, $state){
-          var nav = this;
-          nav.current_user = 'unset';
-          nav.userrole = 'unset';
+          var session = this;
+          session.current_user = 'unset';
+          session.userrole = 'unset';
 
-          nav.signedIn = Auth.isAuthenticated;
-          nav.logout = Auth.logout;
+          session.signedIn = Auth.isAuthenticated;
+          session.logout = Auth.logout;
 
           Auth.currentUser().then(function (user){
             $scope.user = user;
@@ -21,14 +21,16 @@ angular
           });
 
           $scope.$on('devise:login', function (e, user){
-            nav.userrole = user.role;
-            nav.current_user = user;
+            session.userrole = user.role;
+            session.current_user = user;
             $scope.user = user;
           });
 
           $scope.$on('devise:logout', function (e, user){
             $scope.user = {};
             $state.go('welcome');
+            session.current_user = 'unset';
+            session.userrole = 'unset';
           });
 
       }]);
@@ -36,11 +38,11 @@ angular
 // Started with this but it threw an error 
 // sucks because i like this format better:
 
-//function NavController($scope, Auth){
-//   nav = this;
+//function SessionController($scope, Auth){
+//   session = this;
 
-//   nav.signIn = Auth.isAuthenticated;
-//   nav.logout = Auth.logout;
+//   session.signIn = Auth.isAuthenticated;
+//   session.logout = Auth.logout;
 
 //   Auth.currentUser().then(function (user){
 //     $scope.user = user;
@@ -67,4 +69,4 @@ angular
 
 // angular
 //   .module('app')
-//   .controller('NavController', NavController);
+//   .controller('SessionController', SessionController);

@@ -18,8 +18,13 @@ th, td {
 }
 </style>
 
-<div ng-controller="NavController as nav">
-  <div ng-include="'_nav.html'"></div>
+<div ng-controller="SessionController as session">
+  <ul>
+    <li ng-hide="session.signedIn()"><a href="#" ui-sref="welcome.signin">Log In</a></li>
+    <li ng-hide="session.signedIn()"><a href="#" ui-sref="welcome.signup">Register</a></li>
+  </ul>
+  <div ng-if="session.userrole === 'admin'" ng-include="'_admin_nav.html'"></div>
+  <div ng-if="session.userrole === 'user'" ng-include="'_user_nav.html'"></div>
   <ui-view></ui-view>
 </div>
 
