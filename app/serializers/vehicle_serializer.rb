@@ -5,5 +5,7 @@ class VehicleSerializer < ActiveModel::Serializer
              :drive_train, :fuel, :body_type, :options,
              :transmission, :new_or_used, :storage, 
              :delivered
-  has_many :notes, serializer: NoteSerializer
+
+  has_many :notes
+  has_one :status, serializer: VehicleStatusSerializer
 end
