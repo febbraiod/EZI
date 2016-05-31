@@ -1,19 +1,9 @@
 Do next:
 
-I think status is the next branch after that. also need a button for 'delivered'
-
-set up show page:
-
-two tabs
-
 details = {
 
-  data is there need to get layout and photos working: and a link to the edit page for admins
-  also shows vehicle's notes - need to add a delete note options for admins
-
-  from the details w/notes tab there should be the option to set a new status or resolve and old one
-  see notes. re: vehciles have one status. old status is destroyed when new one is set. note is added when any status is set or resolved. Status types: Available, On Test Drive, In F and I, Sold
-
+  data is there need to get layout and photos working: 
+  and a link to the edit page for admins
 
 }
 

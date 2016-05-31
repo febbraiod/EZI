@@ -5,6 +5,7 @@ function StatusController($stateParams, $state, statusService) {
   
   ctrl.status = new Status();
 
+  ctrl.status_obj = Status.query();
 
   ctrl.changeStatus = function(){
     ctrl.status.vehicle_id = ctrl.vehicle_id;

@@ -1,21 +1,0 @@
-{:uriI"‡file://app/assets/javascripts/templates/_nav.html?type=text/ng-html&id=4970fee1bf2a454315a2b97d5a1be4769a6197c5c3a50d1e7738d0bc59156758:ET:load_pathI"app/assets/javascripts;T:filenameI"/app/assets/javascripts/templates/_nav.html;T:	nameI"templates/_nav;T:logical_pathI"templates/_nav.html;T:content_typeI"text/ng-html;T:sourceI"-<div ng-controller="NavCtrl as nav">
-  <ul>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signin">Log In</a></li>
-    <li ng-hide="nav.signedIn()"><a href="#" ui-sref="welcome.signup">Register</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin">Inventory Calendar</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.users">Staff Management</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.analytics">Analylics</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.swaps">Swaps</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'admin'"><a href="#" ui-sref="admin.import">Update Inventory</a></li>
-    <li ng-if="nav.signedIn() && nav.userrole == 'user'"><a href="#" ui-sref="users({name: nav.current_user.name})">Your Calendar</a></li>
-    <li ng-if="nav.signedIn() && (nav.userrole == 'admin' || nav.userrole == 'user')"><a href="#" ui-sref="inventory">Main Inventory</a></li>
-    <li ng-if="nav.signedIn() && (nav.userrole == 'admin' || nav.userrole == 'user')"><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
-    <li ng-if="nav.signedIn()"><a href="#" ng-click="nav.logout()">Log Out</a></li>
-  </ul>
-</div>
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"=file-digest://app/assets/javascripts/templates/_nav.html;TT:charsetI"
-utf-8;F:digest"%Ã×’HfB ¯ñÿX"*ä¡‰41€&—°ûìãŒC`:lengthi-:dependencies_digest"%õ•è­M®Agc—ÏÍz™
-ìÂbW„]z:idI"E4970fee1bf2a454315a2b97d5a1be4769a6197c5c3a50d1e7738d0bc59156758;F:
-mtimel+ÒVGW

@@ -59,7 +59,7 @@ angular
       .state('admin', {
         url: '/admin',
         templateUrl: 'admin.html',
-        // controller: 'AdminController'
+        controller: 'StatusController as ctrl'
       })
       .state('admin.users', {
         url: '/users',
