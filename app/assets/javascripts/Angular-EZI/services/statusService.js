@@ -1,4 +1,4 @@
-function StatusService($resource){
+function statusService($resource){
 
     Status = $resource('http://localhost:3000/api/v1/statuses/:id.json', {id: '@id'});
 

@@ -1,5 +1,5 @@
 class VehicleStatusSerializer < ActiveModel::Serializer
-  attributes :id, :status, :user
+  attributes :id, :vehicle_status, :user
 
   def user
     if object.user_id

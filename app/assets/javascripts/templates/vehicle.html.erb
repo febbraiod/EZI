@@ -8,27 +8,7 @@
             <h3>{{ctrl.vehicle_data.vehicle.year}} {{ctrl.vehicle_data.vehicle.make}} {{ctrl.vehicle_data.vehicle.model}}</h3>
             <p>{{ctrl.vehicle_data.vehicle.VIN}}</p>
             <p>{{ctrl.vehicle_data.vehicle.options}}</p>
-
-            
-            <div ng-controller="StatusController as statusCtrl" style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
-                <h3>Current Vehicle Status: {{ctrl.vehicle_data.vehicle.status.status}}</h3>
-                <h4>Status Applied by: {{ctrl.vehicle_data.vehicle.status.user}}</h4>
-                <h4>Change Status</h3>
-                <form ng-submit="statusCtrl.changeStatus()">
-                    Available       <input type="radio" value="Available"><br>
-                    On Test Drive   <input type="radio" value="Testdrive"><br>
-                    Sent to F and I <input type="radio" value="FandI"><br>
-                    Sold            <input type="radio" value="Sold"><br><br>
-                                    <input type="submit" value="Change Status">
-                </form>
-            </div>
-
-            <div style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
-                <h4>I will only show if vehicle status is sold</h3>
-                <p>if you click me, the vechicle will be moved to the delivered list and sold status will be removed from calendars</p>
-                <button>delivered?</button>
-            </div>
-
+            <p>{{ctrl.vehicle_data.vehicle.status}}</p>
         </div>
 
         <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed width bootstrap -->
@@ -39,16 +19,47 @@
                     <input type="text" ng-model="noteCtrl.note.content">
                     <input type="submit" value="Add Note">
                 </form>
-                <h3>Notes:</h3>
-                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at'">
+                <h3>Most Recent activity:</h3>
+                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
                     {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
                     <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
                 </p>
             </div>
 
+            <div ng-controller="StatusController as statusCtrl">
+                <h3>Current Vehicle Status: {{ctrl.vehicle_data.vehicle.status.vehicle_status}}</h3>
+                <h4>Status Applied by: {{ctrl.vehicle_data.vehicle.status.user}}</h4>
+                <h4>Change Status</h3>
+                <form ng-submit="statusCtrl.changeStatus()">
+                    Available       <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Available"><br>
+                    On Test Drive   <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Testdrive"><br>
+                    Sent to F and I <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="FandI"><br>
+                    Sold            <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Sold"><br><br>
+                    <input type="submit" value="Change Status">
+                </form>
+            
+                <h4>I will only show if vehicle status is sold</h3>
+                <p>if you click me, the vechicle will be moved to the delivered list and sold status will be removed from calendars</p>
+                <button>delivered?</button>
+            </div>
         </div>
-
     </tab>
+
+    <tab label='Activity Log'>
+        <div ng-controller='NoteController as noteCtrl'>
+            <h3>Add note</h3>
+            <form ng-submit="noteCtrl.addNote()"> <!-- might want to make at least this form into a partial and use ng-include since im repeating my self here. -->
+                <label>Content</label><br>
+                <input type="text" ng-model="noteCtrl.note.content">
+                <input type="submit" value="Add Note">
+            </form>
+            <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at'">
+                        {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+                        <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
+            </p>
+        </div>
+    </tab>
+
 
     <tab label='Invoice'>
         <p>invoice</p>
