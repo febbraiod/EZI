@@ -69,7 +69,7 @@ It has to recognize a car that is on hold in the business office and which sales
 
 It has to tell the person what has been recently delivered and is no longer for sale 
 
-It has to recognize if a car was in the yard or at the off site garage 
+It has to recognize if a car was in the yard or at the off site garage <--- STILL HAVENT FIGURED THIS OUT 
 
 
 in a perfect world there'd be a map of the lot with exact locations.

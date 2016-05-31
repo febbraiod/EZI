@@ -15,7 +15,7 @@
 {{dropdownvalue}}
 <br>
   Search Filtered List: <input ng-model="ctrl.search" />
-  <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value ">
+  <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value">
       <stock-card
       year="vehicle.year",
       make="vehicle.make",

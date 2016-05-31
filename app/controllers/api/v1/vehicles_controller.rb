@@ -20,7 +20,8 @@ module Api
       end
 
       def update 
-        @vehicle = Note.find_by(id: params[:id])
+        binding.pry
+        @vehicle = Vehicle.find_by(id: params[:id])
         if @vehicle.update(vehicle_params) 
           render json: @vehicle
         end 
