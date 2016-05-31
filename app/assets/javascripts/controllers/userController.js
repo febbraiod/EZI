@@ -1,6 +1,9 @@
-function UserController(user) {
+function UserController($stateParams, userService) {
   // this.data = user.data; not sure about the user object until i fix my api calls
-  this.data = user;
+  this.user_list = userService.getUsers();
+
+  this.user = userService.getUser($stateParams.name);
+
 }
 
 angular

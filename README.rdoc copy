@@ -1,5 +1,6 @@
 Do next:
 
+vehicle show page:
 details = {
 
   data is there need to get layout and photos working: 
@@ -8,7 +9,6 @@ details = {
 }
 
 invoice = { need to install paperclip }
-
 
 
 edit vehicle page:
@@ -33,6 +33,7 @@ available, test drive, sold, fandi
 price ranges?
 mileages?
 
+admin user page should be used for approving users and should also have lnks to each users calendar
 
 register is not working but i'd like to save this for the end.
 this might help:
@@ -72,8 +73,6 @@ It has to recognize a car that is on hold in the business office and which sales
 It has to tell the person what has been recently delivered and is no longer for sale 
 
 It has to recognize if a car was in the yard or at the off site garage 
-
-It should be able to tell if the car is on a test drive and which salesperson sent it there.
 
 
 in a perfect world there'd be a map of the lot with exact locations.
