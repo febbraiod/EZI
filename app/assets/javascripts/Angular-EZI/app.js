@@ -48,13 +48,7 @@ angular
       .state('users', {
         url: '/users/:name',
         templateUrl: 'user.html',
-        controller: 'UserController as user',
-        resolve: {
-          user: function ($stateParams, UserService) {
-            // return UserService.getUser($stateParams.name); have to fix the api call in UserService
-            return {name: 'Billy'};
-          }
-        }
+        controller: 'UserController as ctrl',
       })
       .state('admin', {
         url: '/admin',
@@ -64,7 +58,7 @@ angular
       .state('admin.users', {
         url: '/users',
         templateUrl: 'users.html',
-        // controller: 'UsersController'
+        controller: 'UserController as ctrl'
       })
       .state('admin.analytics', {
         url: '/analytics',

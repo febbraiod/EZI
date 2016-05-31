@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :vehicles
       resources :notes, only: [:create, :destroy]
       resources :statuses
+      resources :users
     end
   end
 end
