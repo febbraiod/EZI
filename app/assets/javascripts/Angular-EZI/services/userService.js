@@ -1,12 +1,20 @@
-function UserService($http){
+function userService($resource){
 
-  // use $resource
-  this.getUser = function(name){
-    // $http.get('http://0.0.0.0:8882/rest/user' + name); this needs to call my rails api for users
+  User = $resource('http://localhost:3000/api/v1/users/:id.json', {id: '@id'}, {query: {
+      method: 'GET',
+      isArray: false}});
+
+  this.getUsers = function(){
+    return User.query();
   };
+
+  this.getUser = function(name){
+    return User.get({ id: name });
+  };
+
 
 }
 
 angular
   .module('app')
-  .service('UserService', UserService);
+  .service('userService', userService);

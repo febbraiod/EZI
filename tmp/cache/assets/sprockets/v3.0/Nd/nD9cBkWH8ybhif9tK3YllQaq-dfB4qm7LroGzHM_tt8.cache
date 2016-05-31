@@ -1,0 +1,11 @@
+{:uriI"Œfile://app/assets/javascripts/templates/_user_nav.html?type=text/ng-html&id=14b331c872482b26440c27c89eb219068c469dce49e7af3123b292345f87f859:ET:load_pathI"app/assets/javascripts;T:filenameI"4app/assets/javascripts/templates/_user_nav.html;T:	nameI"templates/_user_nav;T:logical_pathI"templates/_user_nav.html;T:content_typeI"text/ng-html;T:sourceI"ö<ul>
+    <li><a href="#" ui-sref="users({name: session.current_user.name})">Your Calendar</a></li>
+    <li><a href="#" ui-sref="inventory">Main Inventory</a></li>
+    <li><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
+</ul>
+
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Bfile-digest://app/assets/javascripts/templates/_user_nav.html;TT:charsetI"
+utf-8;F:digest"%’­¹GÎÔBÉxÕØ€K?ñáã–ÁÖæ?ÁBïR¡:lengthiö:dependencies_digest"%êÂ™×18%Ôg¦8{¼wƒ"ž±×¯fš~+þ‹:idI"E14b331c872482b26440c27c89eb219068c469dce49e7af3123b292345f87f859;F:
+mtimel+ áMW

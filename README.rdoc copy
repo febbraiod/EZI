@@ -1,12 +1,9 @@
 Do next:
 
-
-need adding and updating for vehicles for admin in case 
-any cars come in with bad data or not at all
+Vehicle add and edit forms for admins
 
 
 vehicle show page:
-
 details = {
 
   data is there need to get layout and photos working: 
@@ -15,7 +12,6 @@ details = {
 }
 
 invoice = { need to install paperclip }
-
 
 Data should be validated in Angular before submission:
 
