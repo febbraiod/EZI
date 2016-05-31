@@ -2,9 +2,6 @@ module Api
   module V1
     class StatusesController < ApplicationController
 
-      # not sure if i need this index action, but i don't want to delete it in case i get an error.
-      # I think rendering groups of notes is handled entirely through the vehicle
-
       def index
         respond_with Status.all
       end
@@ -12,15 +9,15 @@ module Api
       def create
         # i hate using vehicle like this as it cant be the StatusesControllers 
         # responiblity to deal with vehicles but i couldn't find another way to 
-        # set up the assocition when creating a status
+        # set up the association when creating a status
         v = Vehicle.find(status_params[:vehicle_id])
+        prev_status = v.status
         v.build_status(status_params)
         v.status.user = current_user
-        binding.pry
         if v.save
-          binding.pry
+          prev_status.destroy #this is so I can query a User instance for it's statuses 
+                              #and only get active statuses
           Note.note_for_status(v.status)
-          #might need to reassign vehicle status for the has_one relationship here
           render json: v.status
         end 
       end
