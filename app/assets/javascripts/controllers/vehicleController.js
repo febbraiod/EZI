@@ -1,4 +1,4 @@
-function VehicleController($scope, vehicle_data) {
+function VehicleController($scope, vehicle_data, vehicleService) {
   this.vehicle_data = vehicle_data;
 }
 

@@ -68,7 +68,7 @@ angular
       .state('admin.import', {
         url: '/inventory/import',
         templateUrl: 'import.html',
-        // controller: 'ImportController'
+        controller: 'ImportController as ctrl'
       })
       .state('admin.swaps', {
         url: '/swaplists',

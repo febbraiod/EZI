@@ -1,14 +1,13 @@
 <h1>Import page</h1>
 <p>I'm only for admins</p>
-<h3>I have an option for importing batch which is currently a CSV upload like this(but i hope to change it to use angular rather than rails(may need to keep this int he long run because FMC probably doesn't track used cars):</h3>
+<h3>I have an option for importing batch which is currently a CSV upload like this(but i hope to change it to use angular rather than rails(may need to keep this in the long run because FMC probably doesn't track used cars)</h3>
 
-<p>I should be a form that submits a CSV to the vehicle model in rails, unless i can fin a way to do this with angular</p>
-
-<br>
-<br>
-
+<p>I should be a form that sends CSV file to the vehicle model in rails, unless i can find a way to do this with angular</p>
 
 <h3>But really FOR NEW CARS I should be an api call to FMC dealer which runs automatically everyday at midnight or a button to click:</h3>
-<button>CALL FORD!</button>
+<button>CALL FORD!</button><br>
 
-<h3>I also need a form to insert a single vehicle manually(requiring a VIN) that will get updated on api calls but not overwritten:</h3>
+<div ng-include="'_vehicle_form.html'"></div>
+
+<br>
+<br>

@@ -1,6 +1,6 @@
 function vehicleService($resource, $http){
 
-    var Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id', {id: '@id'});
+    Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id', {id: '@id'});
 
       // return $resource('api/users/:userId/privileges', 
       //                    {userId: '@id'}, 
