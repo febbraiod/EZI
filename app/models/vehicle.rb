@@ -9,7 +9,6 @@ class Vehicle < ActiveRecord::Base
   has_one :status_setter, through: :status, source: :user
 
   def self.import(file, new_or_used)
-    # CSV.parse(file.tempfile.read.gsub ",http://", ', http://')
     CSV.foreach(file.tempfile, headers: true, :header_converters => lambda { |h| h.try(:downcase).tr(" ", "_") }) do |row|
       vehicle_hash = row.to_hash
       vehicle_hash["new_or_used"] = new_or_used

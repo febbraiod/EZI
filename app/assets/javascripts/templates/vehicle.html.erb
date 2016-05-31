@@ -12,19 +12,6 @@
         </div>
 
         <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed width bootstrap -->
-            <div ng-controller='NoteController as noteCtrl'>
-                <h3>Add note</h3>
-                <form ng-submit="noteCtrl.addNote()">
-                    <label>Content</label><br>
-                    <input type="text" ng-model="noteCtrl.note.content">
-                    <input type="submit" value="Add Note">
-                </form>
-                <h3>Most Recent activity:</h3>
-                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
-                    {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
-                    <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
-                </p>
-            </div>
 
             <div ng-controller="StatusController as statusCtrl">
                 <h3>Current Vehicle Status: {{ctrl.vehicle_data.vehicle.status.vehicle_status}}</h3>
@@ -41,6 +28,21 @@
                 <h4>I will only show if vehicle status is sold</h3>
                 <p>if you click me, the vechicle will be moved to the delivered list and sold status will be removed from calendars</p>
                 <button>delivered?</button>
+            </div>
+
+
+            <div ng-controller='NoteController as noteCtrl'>
+                <h3>Add note</h3>
+                <form ng-submit="noteCtrl.addNote()">
+                    <label>Content</label><br>
+                    <input type="text" ng-model="noteCtrl.note.content">
+                    <input type="submit" value="Add Note">
+                </form>
+                <h3>Most Recent activity:</h3>
+                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
+                    {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+                    <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
+                </p>
             </div>
         </div>
     </tab>

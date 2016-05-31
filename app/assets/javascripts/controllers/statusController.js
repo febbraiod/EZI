@@ -6,28 +6,12 @@ function StatusController($stateParams, $state, statusService) {
   ctrl.status = new Status();
 
 
-  // this might need to just be an update on the exhisting status
   ctrl.changeStatus = function(){
     ctrl.status.vehicle_id = ctrl.vehicle_id;
     ctrl.status.$save(function(){
       $state.reload();
     });
   };
-
-  // ctrl.addNote = function() {
-  //   ctrl.note.vehicle_id = ctrl.vehicle_id;
-  //   ctrl.note.$save(function() {
-  //     $state.reload();
-  //   });
-  // };
-
-  // ctrl.removeNote = function(note){
-  //   ctrl.note.id = note.id;
-  //   ctrl.note.$delete(function() {
-  //     $state.reload();
-  //   });
-  // };
-
 
 
 }
