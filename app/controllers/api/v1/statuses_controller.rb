@@ -9,12 +9,19 @@ module Api
         respond_with Status.all
       end
 
-
       def create
-        @status = Status.new(status_params)
-        @status.user = current_user
-        if @status.save 
-          render json: @status
+        # i hate using vehicle like this as it cant be the StatusesControllers 
+        # responiblity to deal with vehicles but i couldn't find another way to 
+        # set up the assocition when creating a status
+        v = Vehicle.find(status_params[:vehicle_id])
+        v.build_status(status_params)
+        v.status.user = current_user
+        binding.pry
+        if v.save
+          binding.pry
+          Note.note_for_status(v.status)
+          #might need to reassign vehicle status for the has_one relationship here
+          render json: v.status
         end 
       end
 
@@ -25,8 +32,8 @@ module Api
 
       private
 
-      def note_params
-        params.require(:note).permit(:user_id, :vehicle_id, :status)
+      def status_params
+        params.require(:status).permit(:user_id, :vehicle_id, :vehicle_status)
       end
 
 

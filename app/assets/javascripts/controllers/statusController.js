@@ -1,10 +1,18 @@
-function StatusController($stateParams, $state, noteService) {
-  // var ctrl = this;
-  // ctrl.vehicle_id = $stateParams.id;
-
-  // ctrl.vehicle_notes = [];
+function StatusController($stateParams, $state, statusService) {
+  var ctrl = this;
+  ctrl.vehicle_id = $stateParams.id;
+  // current_user can be used on the server side in rails(is this ok?)
   
-  // ctrl.note = new Note();
+  ctrl.status = new Status();
+
+
+  // this might need to just be an update on the exhisting status
+  ctrl.changeStatus = function(){
+    ctrl.status.vehicle_id = ctrl.vehicle_id;
+    ctrl.status.$save(function(){
+      $state.reload();
+    });
+  };
 
   // ctrl.addNote = function() {
   //   ctrl.note.vehicle_id = ctrl.vehicle_id;

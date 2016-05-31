@@ -19,7 +19,7 @@ class Vehicle < ActiveRecord::Base
       v = Vehicle.create(vehicle_hash.except("dealerid", "dealer_name", "dealer_address", "dealer_city", 
       "dealer_region", "dealer_postal_code", "dealer_phone_number", "description", "placeholder1","placeholder2","series", "third_party_feature_codes", "video_url_duration",
       "video_url", "video_source_", "video_source"))
-      v.build_status(user_id: 1)
+      v.build_status(user_id: 1, vehicle_status: 'Available')
       v.save
     end
   end

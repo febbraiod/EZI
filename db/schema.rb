@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530163349) do
+ActiveRecord::Schema.define(version: 20160531143736) do
 
   create_table "notes", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20160530163349) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.string   "status",     default: "Available"
+    t.string   "vehicle_status", default: "Available"
     t.integer  "user_id"
     t.integer  "vehicle_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "users", force: :cascade do |t|
