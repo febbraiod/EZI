@@ -1,5 +1,11 @@
 <h1>I'm the Main Admin page</h1>
 <admin-nav></admin-nav>
 <div ui-view>
-<p>I have a CENTRALIZED calendar that shows me the statuses of all the vehicles that ANYONE has touched which have unresolved statuses. If not a calendar I could be a list of vehicles with unresolved statuses. Oldest at the top.</p>
+<p>I have a CENTRALIZED calendar that shows me the statuses of all the vehicles that ANYONE has touched which have unresolved statuses</p> 
+
+<p>this list of list of statuses is going to be the dtata used to build the calendar. Oldest at the top:</p>
+  <ul>
+    <li ng-repeat='status in ctrl.status_obj.statuses | filter: { vehicle_status: "!Available" } | orderBy: "created_at"'>{{status}}</li>
+  </ul>
+
 </div>

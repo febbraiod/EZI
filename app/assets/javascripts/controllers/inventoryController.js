@@ -6,7 +6,6 @@ function InventoryController(vehicleService) {
   vehicleService.getInventory.then(function(response) {
     ctrl.vehicles = response;
   });
-  // ctrl.dropdown.value = 'all';
 
 }
 

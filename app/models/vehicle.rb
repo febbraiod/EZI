@@ -9,7 +9,6 @@ class Vehicle < ActiveRecord::Base
   has_one :status_setter, through: :status, source: :user
 
   def self.import(file, new_or_used)
-    # CSV.parse(file.tempfile.read.gsub ",http://", ', http://')
     CSV.foreach(file.tempfile, headers: true, :header_converters => lambda { |h| h.try(:downcase).tr(" ", "_") }) do |row|
       vehicle_hash = row.to_hash
       vehicle_hash["new_or_used"] = new_or_used
@@ -19,7 +18,7 @@ class Vehicle < ActiveRecord::Base
       v = Vehicle.create(vehicle_hash.except("dealerid", "dealer_name", "dealer_address", "dealer_city", 
       "dealer_region", "dealer_postal_code", "dealer_phone_number", "description", "placeholder1","placeholder2","series", "third_party_feature_codes", "video_url_duration",
       "video_url", "video_source_", "video_source"))
-      v.build_status(user_id: 1)
+      v.build_status(user_id: 1, vehicle_status: 'Available')
       v.save
     end
   end

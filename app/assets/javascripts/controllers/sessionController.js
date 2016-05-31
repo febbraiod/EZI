@@ -12,21 +12,21 @@ angular
           session.signedIn = Auth.isAuthenticated;
           session.logout = Auth.logout;
 
-          Auth.currentUser().then(function (user){
-            $scope.user = user;
+          Auth.currentUser().then(function (user_obj){
+            $scope.user = user_obj.user;
           });
 
-          $scope.$on('devise:new-registration', function (e, user){
-            $scope.user = user;
+          $scope.$on('devise:new-registration', function (e, user_obj){
+            $scope.user = user_obj.user;
           });
 
-          $scope.$on('devise:login', function (e, user){
-            session.userrole = user.role;
-            session.current_user = user;
-            $scope.user = user;
+          $scope.$on('devise:login', function (e, user_obj){
+            session.userrole = user_obj.user.role;
+            session.current_user = user_obj.user;
+            $scope.user = user_obj.user;
           });
 
-          $scope.$on('devise:logout', function (e, user){
+          $scope.$on('devise:logout', function (e, user_obj){
             $scope.user = {};
             $state.go('welcome');
             session.current_user = 'unset';
