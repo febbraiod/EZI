@@ -1,9 +1,9 @@
-function InventoryController(vehicleService) {
+function InventoryController(inventoryService) {
   var ctrl = this;
 
   ctrl.vehicles = [];
  
-  vehicleService.getInventory.then(function(response) {
+  inventoryService.getInventory.then(function(response) {
     ctrl.vehicles = response;
   });
 

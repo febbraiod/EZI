@@ -1,6 +1,4 @@
-function vehicleService($resource, $http, $stateParams){
-
-  Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id', {id: '@id'});
+function vehicleService($http, $stateParams){
 
   this.getInventory = $http({ method: 'GET', url: 'http://localhost:3000/api/v1/vehicles'})
                       .then(function successCallback(response) {
