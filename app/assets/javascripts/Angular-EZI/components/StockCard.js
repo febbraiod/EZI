@@ -29,7 +29,7 @@ var StockCard = {
       "<p>MSRP: ${{ctrl.msrp}} / Asking: ${{ctrl.dealerprice}}</p>",
       "<p>Vin: {{ctrl.vin}}</p>",
       // eventually i'd like the url to use :stock_no rather than :id
-      "<p>Stock Number: <a href='#/vehicle/{{ctrl.id}}'>{{ctrl.stock}}</a></p>",
+      "<p>Stock Number: <a href='#' ui-sref='vehicle({id: {{ctrl.id}}})'>{{ctrl.stock}}</a></p>",
     "</div>",
     "<div class='card_section'>",
       "<p>ownership: {{ctrl.neworused}}</p>",

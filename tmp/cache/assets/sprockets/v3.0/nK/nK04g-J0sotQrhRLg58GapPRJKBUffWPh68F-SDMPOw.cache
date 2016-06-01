@@ -1,34 +1,0 @@
-{:uriI"êfile://app/assets/javascripts/templates/_vehicle_form.html?type=text/ng-html&id=95a044181c49cc174c26254d1209ede8e46a56c0e731c625d6ed6c2982b0e447:ET:load_pathI"app/assets/javascripts;T:filenameI"8app/assets/javascripts/templates/_vehicle_form.html;T:	nameI"templates/_vehicle_form;T:logical_pathI"!templates/_vehicle_form.html;T:content_typeI"text/ng-html;T:sourceI"∂<h3>I'm a form to insert a single vehicle manually(requiring a VIN) that will get updated on api calls but not overwritten(look at validation in vehicles for VIN uniqiness to call an update instead)</h3>
-
-  <h3>Add Vehicle</h3>
-  <form ng-submit="ctrl.addVehicle()">
-      <label>Make</label>
-      <input type="text" ng-model="ctrl.vehicle.make">
-      <label>Model</label>
-      <input type="text" ng-model="ctrl.vehicle.model">
-      <input type="submit" value="Add Note">
-  </form>
-
-
-  t.integer  "stock_no"
-    t.integer  "year"
-    t.string   "make"
-    t.string   "model"
-    t.string   "VIN"
-    t.integer  "odometer"
-    t.integer  "msrp"
-    t.integer  "dealer_price"
-    t.string   "color"
-    t.string   "interior_color"
-    t.text     "photo_url_list"
-    t.string   "engine"
-    t.string   "drive_train"
-    t.string   "fuel"
-    t.string   "body_type"
-    t.text     "options"
-    t.string   "transmission"
-    t.string   "new_or_used";T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Ffile-digest://app/assets/javascripts/templates/_vehicle_form.html;TT:charsetI"
-utf-8;F:digest"%◊cÛ∞-–]›°ınÙﬂZÅè|ÆåßÛ¢Û<ÅVŸf\8:lengthi∂:dependencies_digest"%u'ämç;@^8≠ñgE»'‡Ò—ÁÃr˙:ohïE:idI"E95a044181c49cc174c26254d1209ede8e46a56c0e731c625d6ed6c2982b0e447;F:
-mtimel+NW
