@@ -1,0 +1,38 @@
+{:uriI"êfile://app/assets/javascripts/templates/_vehicle_form.html?type=text/ng-html&id=619bd2a2563b654c3326cdf2feaa52e7519933c395d1d0e5e63e9fdaba5232b3:ET:load_pathI"app/assets/javascripts;T:filenameI"8app/assets/javascripts/templates/_vehicle_form.html;T:	nameI"templates/_vehicle_form;T:logical_pathI"!templates/_vehicle_form.html;T:content_typeI"text/ng-html;T:sourceI"/
+      <label>Year</label><br>
+      <input type="text" ng-model="ctrl.vehicle.year"><br>
+      <label>Make</label><br>
+      <input type="text" ng-model="ctrl.vehicle.make"><br>
+      <label>Model</label><br>
+      <input type="text" ng-model="ctrl.vehicle.model"><br>
+      <label>VIN(required)</label><br>
+      <input type="text" ng-model="ctrl.vehicle.VIN"><br>
+      <label>Odometer</label><br>
+      <input type="text" ng-model="ctrl.vehicle.odometer"><br>
+      <label>MSRP</label><br>
+      <input type="text" ng-model="ctrl.vehicle.msrp"><br>
+      <label>Dealer Price</label><br>
+      <input type="text" ng-model="ctrl.vehicle.dealer_price"><br>
+      <label>Color</label><br>
+      <input type="text" ng-model="ctrl.vehicle.color"><br>
+      <label>Interior Color</label><br>
+      <input type="text" ng-model="ctrl.vehicle.interior_color"><br>
+      <label>Engine</label><br>
+      <input type="text" ng-model="ctrl.vehicle.engine"><br>
+      <label>Drive Train</label><br>
+      <input type="text" ng-model="ctrl.vehicle.drive_train"><br>
+      <label>Fuel</label><br>
+      <input type="text" ng-model="ctrl.vehicle.fuel"><br>
+      <label>Body</label><br>
+      <input type="text" ng-model="ctrl.vehicle.body_type"><br>
+      <label>Transmission</label><br>
+      <input type="text" ng-model="ctrl.vehicle.transmission"><br>
+      <label>New or Used?</label><br>
+      <input type="radio" ng-model="ctrl.new_or_used" value="New"> New<br>
+      <input type="radio" ng-model="ctrl.new_or_used" value="Used"> Used<br>
+      <input type="submit" value="Submit Vehicle">
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Ffile-digest://app/assets/javascripts/templates/_vehicle_form.html;TT:charsetI"
+utf-8;F:digest"%8`b÷ê‚fôé_hsÖ≈S‰<°rÂ89øIYÜ.ØΩ:lengthi/:dependencies_digest"%õH,^¥Nd*∆¥/w3˚£ß‹ÜG“Y(YKè|sÍ:idI"E619bd2a2563b654c3326cdf2feaa52e7519933c395d1d0e5e63e9fdaba5232b3;F:
+mtimel+ÖNW

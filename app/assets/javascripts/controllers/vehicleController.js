@@ -1,5 +1,14 @@
-function VehicleController($scope, vehicle_data, vehicleService) {
-  this.vehicle_data = vehicle_data;
+function VehicleController($scope, vehicleService) {
+  ctrl = this;
+
+  vehicleService.getVehicle.then(function(response) {
+    ctrl.vehicle = response;
+  });
+
+  this.updateVehicle = function(){
+    vehicleService.updateVehicle();
+  };
+
 }
 
 angular

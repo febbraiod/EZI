@@ -1,6 +1,5 @@
 <div ui-view>
 <h1>I'm the Inventory Index page</h1>
-<ul>
 <form>
   <label for="additional_filters">Optional Filters</label>
     <select name='additional_filters' ng-model='dropdown.value' ng-init="dropdown.value='all'">
@@ -14,7 +13,8 @@
 </form>
 {{dropdownvalue}}
 <br>
-  Search Filtered List: <input ng-model="ctrl.search" />
+  Search Filtered List: <input ng-model="ctrl.search"></input>
+  <ul>
   <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value">
       <stock-card
       year="vehicle.year",
@@ -32,7 +32,5 @@
       </stock-card>
   </li>
 </ul>
-<!-- this ui-sref here is a method that makes a api call
-or is the api call made after following the link? -->
 </div>
 

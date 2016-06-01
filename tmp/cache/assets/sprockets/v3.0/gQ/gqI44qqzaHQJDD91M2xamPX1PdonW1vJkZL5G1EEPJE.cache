@@ -1,16 +1,0 @@
-{:uriI"çfile://app/assets/javascripts/templates/_admin_nav.html?type=text/ng-html&id=0754b0cbbd1e1ff7a2dc618b2fe7c21b363fa6ed9912b06cd9e6fde4b204b2c1:ET:load_pathI"app/assets/javascripts;T:filenameI"5app/assets/javascripts/templates/_admin_nav.html;T:	nameI"templates/_admin_nav;T:logical_pathI"templates/_admin_nav.html;T:content_typeI"text/ng-html;T:sourceI"<ul>
-    <li><a href="#" ui-sref="admin">Inventory Calendar</a></li>
-    <li><a href="#" ui-sref="admin.users">Staff Management</a></li>
-    <li><a href="#" ui-sref="admin.analytics">Analylics</a></li>
-    <li><a href="#" ui-sref="admin.swaps">Swaps</a></li>
-    <li><a href="#" ui-sref="admin.import">Update Inventory</a></li>
-    <li><a href="#" ui-sref="inventory">Main Inventory</a></li>
-    <li><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
-    <li><a href="#" ng-click="session.logout()">Log Out</a></li>
-</ul>
-
-;T:metadata{	:dependencieso:Set:
-@hash{
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Cfile-digest://app/assets/javascripts/templates/_admin_nav.html;TT:charsetI"
-utf-8;F:digest"%tåΩ*ft‹ú‘L{Å¢B…ıc§3…ø!ìéˇtO‰å:lengthi:dependencies_digest"%ná>~©¨+à∂‘~\ˆ+í!…X€Üè+hÚoB:idI"E0754b0cbbd1e1ff7a2dc618b2fe7c21b363fa6ed9912b06cd9e6fde4b204b2c1;F:
-mtimel+eYLW
