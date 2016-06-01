@@ -3,6 +3,7 @@ function VehicleController($scope, vehicleService) {
 
   vehicleService.getVehicle.then(function(response) {
     ctrl.vehicle = response;
+    $state.reload();
   });
 
   this.updateVehicle = function(){
