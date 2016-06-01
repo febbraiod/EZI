@@ -7,7 +7,12 @@
 <h3>But really FOR NEW CARS I should be an api call to FMC dealer which runs automatically everyday at midnight or a button to click:</h3>
 <button>CALL FORD!</button><br>
 
-<div ng-include="'_vehicle_form.html'"></div>
+<h3>for requiring a VIN use angular validation
+(look at validation in vehicle model in rails for VIN uniqiness to call an update instead)</h3>
 
+<h3>Add Vehicle</h3>
+  <form ng-submit="ctrl.addVehicle()">
+    <div ng-include="'_vehicle_form.html'"></div>
+  </form>
 <br>
 <br>
