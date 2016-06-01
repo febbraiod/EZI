@@ -1,0 +1,17 @@
+notes:
+
+using the back button screws up the app
+
+
+Note for Chris: the used autotrader doesn't have the headers, 
+these must by copied over from the 'new' file to work with the current setup.
+
+Note for Me: The fucking CSV sucks. the fields didn't fill in correctly unless you tweak each field perfectly. fix this for the demo, but there has to be a better solution(api calls to parent co db). In the end the data should come from the parent Co. i.e. FMC FMCDEALER
+
+in a perfect world there'd be a map of the lot with exact locations.
+
+
+
+
+
+
