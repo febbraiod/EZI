@@ -1,12 +1,23 @@
-function VehicleController($scope, vehicleService) {
+function VehicleController($scope, $state, vehicleService) {
   ctrl = this;
 
-  vehicleService.getVehicle.then(function(response) {
-    ctrl.vehicle = response;
+  vehicleService.getVehicle().then(function(resp) {
+    ctrl.vehicle = resp.data.vehicle;
+  }, function(error) {
+    alert('error see console log');
+    console.log(error);
   });
 
+  var data = ctrl.vehicle
+
   this.updateVehicle = function(){
-    vehicleService.updateVehicle();
+    vehicleService.updateVehicle(ctrl.vehicle).then(function(resp) {
+    ctrl.vehicle = resp.data.vehicle;
+    alert('Vehicle Successfully Update');
+  }, function(error) {
+    alert('error see console log');
+    console.log(error);
+  });
   };
 
 }

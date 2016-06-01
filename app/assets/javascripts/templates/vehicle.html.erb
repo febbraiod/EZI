@@ -3,10 +3,11 @@
 <tabs>
 
     <tab label='Vehicle Details'>
-
         <div style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
             <h3>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h3>
             <p>{{ctrl.vehicle.VIN}}</p>
+            <p>{{ctrl.vehicle.msrp}}</p>
+            <p>{{ctrl.vehicle.dealer_price}}</p>
             <p>{{ctrl.vehicle.options}}</p>
             <p>{{ctrl.vehicle.status}}</p>
         </div>
@@ -26,7 +27,7 @@
                 </form>
             
                 <h4>I will only show if vehicle status is sold</h3>
-                <p>if you click me, the vechicle will be moved to the delivered list and sold status will be removed from calendars</p>
+                <p>if you click me, the vehicle will be moved to the delivered list and sold status will be removed from calendars</p>
                 <button>delivered?</button>
             </div>
 
