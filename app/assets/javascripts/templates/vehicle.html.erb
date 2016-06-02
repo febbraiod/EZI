@@ -69,12 +69,20 @@
     </tab>
 
     <tab ng-if="session.userrole === 'admin'" label='Edit Vehicle'>
-        <form ng-submit="ctrl.updateVehicle()">
-            <div ng-include="'_vehicle_form.html'"></div>
-        </form>
+
+    <form name='ctrl.updateVehicleForm' ng-submit="ctrl.updateVehicle()">
+        <div ng-include="'_vehicle_form.html'"></div>
+    </form>
+
+    <h1 ng-if="ctrl.updateVehicleForm.VIN.$touched && ctrl.updateVehicleForm.VIN.$error.required">VIN is required!</h1>
+    <h1 ng-if="ctrl.updateVehicleForm.stock_no.$touched && ctrl.updateVehicleForm.stock_no.$error.required">Stock Number is required!</h1>
+    <h1 ng-if="ctrl.updateVehicleForm.year.$error.maxlength">Max characters for color 47</h1>
+    {{ctrl.updateVehicleForm}}
     </tab>
 
 </tabs>
+
+
 
 <!-- example vechile obj: -->
 

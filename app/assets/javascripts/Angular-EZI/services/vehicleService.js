@@ -1,5 +1,7 @@
-function vehicleService($http, $stateParams){
+function vehicleService($http, $resource, $stateParams){
     
+  Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id.json', {id: '@id'});
+
   this.getVehicle = function(){
                     return $http({ method: 'GET', url: 'http://localhost:3000/api/v1/vehicles/' + $stateParams.id});
                     };
