@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531143736) do
+ActiveRecord::Schema.define(version: 20160602173658) do
 
   create_table "notes", force: :cascade do |t|
     t.integer  "user_id"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160531143736) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "vehicles", force: :cascade do |t|
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "stock_no"
     t.integer  "year"
     t.string   "make"
@@ -70,8 +70,12 @@ ActiveRecord::Schema.define(version: 20160531143736) do
     t.text     "options"
     t.string   "transmission"
     t.string   "new_or_used"
-    t.string   "storage",        default: "unset"
-    t.boolean  "delivered",      default: false
+    t.string   "storage",              default: "unset"
+    t.boolean  "delivered",            default: false
+    t.string   "invoice_file_name"
+    t.string   "invoice_content_type"
+    t.integer  "invoice_file_size"
+    t.datetime "invoice_updated_at"
   end
 
 end

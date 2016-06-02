@@ -5,8 +5,7 @@ angular
     $stateProvider //at somepoint I need to add permissions: https://www.theodo.fr/blog/2015/08/handling-basic-route-authorization-in-angularjs/
       .state('welcome', {
         url: '/',
-        templateUrl: 'welcome.html',
-        // controller: 'WelcomeController'
+        templateUrl: 'welcome.html'
       })
       .state('welcome.signin', {
         url: 'signin',
@@ -39,11 +38,6 @@ angular
         url: '/vehicle/:id',
         templateUrl: 'vehicle.html',
         controller: 'VehicleController as ctrl',
-        resolve: {
-          vehicle_data: function ($stateParams, vehicleService) {
-            return vehicleService.getVehicle($stateParams.id);
-          }
-        }
       })
       .state('users', {
         url: '/users/:name',
@@ -68,7 +62,7 @@ angular
       .state('admin.import', {
         url: '/inventory/import',
         templateUrl: 'import.html',
-        // controller: 'ImportController'
+        controller: 'ImportController as ctrl'
       })
       .state('admin.swaps', {
         url: '/swaplists',

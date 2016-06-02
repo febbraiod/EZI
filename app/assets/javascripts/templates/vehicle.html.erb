@@ -3,19 +3,20 @@
 <tabs>
 
     <tab label='Vehicle Details'>
-
         <div style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
-            <h3>{{ctrl.vehicle_data.vehicle.year}} {{ctrl.vehicle_data.vehicle.make}} {{ctrl.vehicle_data.vehicle.model}}</h3>
-            <p>{{ctrl.vehicle_data.vehicle.VIN}}</p>
-            <p>{{ctrl.vehicle_data.vehicle.options}}</p>
-            <p>{{ctrl.vehicle_data.vehicle.status}}</p>
+            <h3>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h3>
+            <p>{{ctrl.vehicle.VIN}}</p>
+            <p>{{ctrl.vehicle.msrp}}</p>
+            <p>{{ctrl.vehicle.dealer_price}}</p>
+            <p>{{ctrl.vehicle.options}}</p>
+            <p>{{ctrl.vehicle.status}}</p>
         </div>
 
         <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed width bootstrap -->
 
             <div ng-controller="StatusController as statusCtrl">
-                <h3>Current Vehicle Status: {{ctrl.vehicle_data.vehicle.status.vehicle_status}}</h3>
-                <h4>Status Applied by: {{ctrl.vehicle_data.vehicle.status.user}}</h4>
+                <h3>Current Vehicle Status: {{ctrl.vehicle.status.vehicle_status}}</h3>
+                <h4>Status Applied by: {{ctrl.vehicle.status.user}}</h4>
                 <h4>Change Status</h3>
                 <form ng-submit="statusCtrl.changeStatus()">
                     Available       <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Available"><br>
@@ -26,7 +27,7 @@
                 </form>
             
                 <h4>I will only show if vehicle status is sold</h3>
-                <p>if you click me, the vechicle will be moved to the delivered list and sold status will be removed from calendars</p>
+                <p>if you click me, the vehicle will be moved to the delivered list and sold status will be removed from calendars</p>
                 <button>delivered?</button>
             </div>
 
@@ -39,7 +40,7 @@
                     <input type="submit" value="Add Note">
                 </form>
                 <h3>Most Recent activity:</h3>
-                <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
+                <p ng-repeat="note in ctrl.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
                     {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
                     <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
                 </p>
@@ -55,9 +56,9 @@
                 <input type="text" ng-model="noteCtrl.note.content">
                 <input type="submit" value="Add Note">
             </form>
-            <p ng-repeat="note in ctrl.vehicle_data.vehicle.notes | orderBy: '-created_at'">
-                        {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
-                        <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
+            <p ng-repeat="note in ctrl.vehicle.notes | orderBy: '-created_at'">
+            {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+            <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
             </p>
         </div>
     </tab>
@@ -67,7 +68,19 @@
         <p>invoice</p>
     </tab>
 
+    <tab ng-if="session.userrole === 'admin'" label='Edit Vehicle'>
+        <form name='ctrl.updateVehicleForm' ng-submit="ctrl.updateVehicle()">
+            <div ng-include="'_vehicle_form.html'"></div>
+        </form>
+
+        <h1 ng-if="ctrl.updateVehicleForm.VIN.$touched && ctrl.updateVehicleForm.VIN.$error.required">VIN is required!</h1>
+        <h1 ng-if="ctrl.updateVehicleForm.stock_no.$touched && ctrl.updateVehicleForm.stock_no.$error.required">Stock Number is required!</h1>
+        <h1 ng-if="ctrl.updateVehicleForm.year.$error.maxlength">Max characters for color 47</h1>
+    </tab>
+
 </tabs>
+
+
 
 <!-- example vechile obj: -->
 

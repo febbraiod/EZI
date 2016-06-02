@@ -13,14 +13,15 @@ module Api
       end
 
       def create
-        @vehicle = Vehicle.new(vehicle_params) 
+        @vehicle = Vehicle.new(vehicle_params)
+        @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
         if @vehicle.save 
           render json: @vehicle
         end 
       end
 
       def update 
-        @vehicle = Note.find_by(id: params[:id])
+        @vehicle = Vehicle.find_by(id: params[:id])
         if @vehicle.update(vehicle_params) 
           render json: @vehicle
         end 
@@ -35,7 +36,7 @@ module Api
                                         :interior_color, :photo_url_list, :engine,
                                         :drive_train, :fuel, :body_type, :options,
                                         :transmission, :new_or_used, :storage, 
-                                        :delivered)
+                                        :delivered, :invoice)
       end
 
 
