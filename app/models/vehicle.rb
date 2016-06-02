@@ -5,6 +5,8 @@ class Vehicle < ActiveRecord::Base
 
   before_validation :color_check
 
+  has_attached_file :invoice, default_url: ':style/default_missing_invoice.png'
+
   has_many :notes
   has_many :note_authors, through: :notes, source: :user
 

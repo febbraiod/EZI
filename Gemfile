@@ -31,6 +31,9 @@ source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end
 
+#for invoice image attachments
+gem "paperclip", "~> 5.0.0.beta1"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -14,6 +14,7 @@ function VehicleController($scope, $state, vehicleService) {
     vehicleService.updateVehicle(ctrl.vehicle).then(function(resp) {
     ctrl.vehicle = resp.data.vehicle;
     alert('Vehicle Successfully Update');
+    $state.reload();
   }, function(error) {
     alert('error see console log');
     console.log(error);

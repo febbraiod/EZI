@@ -57,8 +57,8 @@
                 <input type="submit" value="Add Note">
             </form>
             <p ng-repeat="note in ctrl.vehicle.notes | orderBy: '-created_at'">
-                        {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
-                        <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
+            {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+            <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
             </p>
         </div>
     </tab>
@@ -69,15 +69,13 @@
     </tab>
 
     <tab ng-if="session.userrole === 'admin'" label='Edit Vehicle'>
+        <form name='ctrl.updateVehicleForm' ng-submit="ctrl.updateVehicle()">
+            <div ng-include="'_vehicle_form.html'"></div>
+        </form>
 
-    <form name='ctrl.updateVehicleForm' ng-submit="ctrl.updateVehicle()">
-        <div ng-include="'_vehicle_form.html'"></div>
-    </form>
-
-    <h1 ng-if="ctrl.updateVehicleForm.VIN.$touched && ctrl.updateVehicleForm.VIN.$error.required">VIN is required!</h1>
-    <h1 ng-if="ctrl.updateVehicleForm.stock_no.$touched && ctrl.updateVehicleForm.stock_no.$error.required">Stock Number is required!</h1>
-    <h1 ng-if="ctrl.updateVehicleForm.year.$error.maxlength">Max characters for color 47</h1>
-    {{ctrl.updateVehicleForm}}
+        <h1 ng-if="ctrl.updateVehicleForm.VIN.$touched && ctrl.updateVehicleForm.VIN.$error.required">VIN is required!</h1>
+        <h1 ng-if="ctrl.updateVehicleForm.stock_no.$touched && ctrl.updateVehicleForm.stock_no.$error.required">Stock Number is required!</h1>
+        <h1 ng-if="ctrl.updateVehicleForm.year.$error.maxlength">Max characters for color 47</h1>
     </tab>
 
 </tabs>

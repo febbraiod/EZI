@@ -6,6 +6,9 @@ function ImportController($location, vehicleService) {
   this.addVehicle = function() {
     ctrl.vehicle.$save(function(resp) {
       $location.path('vehicle/' + resp.vehicle.id);
+    }, function(err){
+      alert('Vehicle not added, see console log');
+      console.log(err);
     });
   };
 
