@@ -1,6 +1,9 @@
 class Vehicle < ActiveRecord::Base
   validates :VIN, uniqueness: true
   validates :storage, :inclusion => { :in => %w(on-lot off-lot unset) }
+  validates :color, :length => { :maximum => 47 }
+
+  before_validation :color_check
 
   has_many :notes
   has_many :note_authors, through: :notes, source: :user
@@ -20,6 +23,15 @@ class Vehicle < ActiveRecord::Base
       "video_url", "video_source_", "video_source"))
       v.build_status(user_id: 1, vehicle_status: 'Available')
       v.save
+    end
+  end
+
+  protected
+
+  def color_check
+    if color.length > 47
+      c = color.delete(' ')
+      c.slice! 0..47
     end
   end
 
