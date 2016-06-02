@@ -11,8 +11,13 @@
 (look at validation in vehicle model in rails for VIN uniqiness to call an update instead)</h3>
 
 <h3>Add Vehicle</h3>
-  <form ng-submit="ctrl.addVehicle()">
+  <form name='ctrl.addVehicleForm' ng-submit="ctrl.addVehicle()">
     <div ng-include="'_vehicle_form.html'"></div>
   </form>
+
+  <h1 ng-if="ctrl.addVehicleForm.VIN.$touched && ctrl.addVehicleForm.VIN.$error.required">VIN is required!</h1>
+  <h1 ng-if="ctrl.addVehicleForm.stock_no.$touched && ctrl.addVehicleForm.stock_no.$error.required">Stock is required!</h1>
+  <h1 ng-if="ctrl.addVehicleForm.year.$error.maxlength">Max characters for color 47</h1>
+  
 <br>
 <br>

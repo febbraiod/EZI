@@ -8,7 +8,7 @@ function VehicleController($scope, $state, vehicleService) {
     console.log(error);
   });
 
-  var data = ctrl.vehicle
+  var data = ctrl.vehicle;
 
   this.updateVehicle = function(){
     vehicleService.updateVehicle(ctrl.vehicle).then(function(resp) {
