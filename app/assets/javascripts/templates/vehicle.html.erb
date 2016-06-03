@@ -3,21 +3,26 @@
 <tabs>
 
     <tab label='Vehicle Details'>
-        <div style="float:left; width:45%;"> <!-- temp. to be addressed width bootstrap -->
+        <div style="float:left; width:45%;"> <!-- temp. to be addressed with bootstrap -->
             <h3>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h3>
-            <p>{{ctrl.vehicle.VIN}}</p>
-            <p>{{ctrl.vehicle.msrp}}</p>
-            <p>{{ctrl.vehicle.dealer_price}}</p>
-            <p>{{ctrl.vehicle.options}}</p>
-            <p>{{ctrl.vehicle.status}}</p>
+            <h4>{{ctrl.vehicle.color}}</h4>
+            <p>Ownership: {{ctrl.vehicle.new_or_used}}</p>
+            <p>MSRP: {{ctrl.vehicle.msrp}}</p>
+            <p>Asking: {{ctrl.vehicle.dealer_price}}</p>
+            <p>Vehicle is: {{ctrl.vehicle.status.vehicle_status}}</p>
+            <p>VIN: {{ctrl.vehicle.VIN}}</p>
+            <p>Engine: {{ctrl.vehicle.engine}}</p>
+            <p>{{ctrl.vehicle.body_type}} {{ctrl.vehicle.drive_train}} {{ctrl.vehicle.fuel}}</p>
+            <p>Location: {{ctrl.vehicle.storage}}</p>
+            <p>Options: {{ctrl.vehicle.options}}</p>
         </div>
 
-        <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed width bootstrap -->
+        <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed with bootstrap -->
 
-            <div ng-controller="StatusController as statusCtrl">
+            <div style="border-style: solid; margin: 5px; padding: 3px;" ng-controller="StatusController as statusCtrl">
                 <h3>Current Vehicle Status: {{ctrl.vehicle.status.vehicle_status}}</h3>
                 <h4>Status Applied by: {{ctrl.vehicle.status.user}}</h4>
-                <h4>Change Status</h3>
+                <h5>Change Status:</h5>
                 <form ng-submit="statusCtrl.changeStatus()">
                     Available       <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Available"><br>
                     On Test Drive   <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Testdrive"><br>
@@ -25,14 +30,16 @@
                     Sold            <input type="radio" ng-model="statusCtrl.status.vehicle_status" value="Sold"><br><br>
                     <input type="submit" value="Change Status">
                 </form>
-            
-                <h4>I will only show if vehicle status is sold</h3>
-                <p>if you click me, the vehicle will be moved to the delivered list and sold status will be removed from calendars</p>
-                <button>delivered?</button>
+                <div ng-if='ctrl.vehicle.status.vehicle_status === "Sold"'>
+                    <h4>I will only show if vehicle status is sold</h4>
+                    <p>This vehicle has been marked sold. Has it been delivered?</p>
+                    <p>if you click me, the vehicle will be moved to the delivered list and sold status will be removed from calendars</p>
+                    <button>delivered?</button>
+                </div>
             </div>
 
 
-            <div ng-controller='NoteController as noteCtrl'>
+            <div style="border-style: solid; margin: 5px; padding: 3px;" ng-controller='NoteController as noteCtrl'>
                 <h3>Add note</h3>
                 <form ng-submit="noteCtrl.addNote()">
                     <label>Content</label><br>

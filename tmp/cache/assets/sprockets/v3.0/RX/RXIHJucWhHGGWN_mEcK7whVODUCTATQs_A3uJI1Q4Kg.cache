@@ -1,0 +1,44 @@
+{:uriI"êfile://app/assets/javascripts/templates/_vehicle_form.html?type=text/ng-html&id=57e529e29e34e8e57e540daeddb7011be7bc2c2df3cd0905aa7e3e05595f6cfd:ET:load_pathI"app/assets/javascripts;T:filenameI"8app/assets/javascripts/templates/_vehicle_form.html;T:	nameI"templates/_vehicle_form;T:logical_pathI"!templates/_vehicle_form.html;T:content_typeI"text/ng-html;T:sourceI"&
+      <label>Year</label><br>
+      <input type="number" name="year" maxlength='4' ng-model="ctrl.vehicle.year"><br>
+      <label>Make</label><br>
+      <input type="text" name="make" ng-model="ctrl.vehicle.make"><br>
+      <label>Model</label><br>
+      <input type="text" name="model" ng-model="ctrl.vehicle.model"><br>
+      <label>Stock Number</label><br>
+      <input type="text" name="stock_no" required="required" ng-model="ctrl.vehicle.stock_no"><br>
+      <label>VIN(required)</label><br>
+      <input type="text" name="VIN" required="required" ng-model="ctrl.vehicle.VIN"><br>
+      <label>Odometer</label><br>
+      <input type="number" name="odometer" ng-model="ctrl.vehicle.odometer"><br>
+      <label>MSRP</label><br>
+      <input type="number" name="msrp" ng-model="ctrl.vehicle.msrp"><br>
+      <label>Dealer Price</label><br>
+      <input type="number" name="dealer_price" ng-model="ctrl.vehicle.dealer_price"><br>
+      <label>Color</label><br>
+      <input type="text" name="color" ng-model="ctrl.vehicle.color"><br>
+      <label>Interior Color</label><br>
+      <input type="text" name="interior_color" ng-model="ctrl.vehicle.interior_color"><br>
+      <label>Engine</label><br>
+      <input type="text" name="engine" ng-model="ctrl.vehicle.engine"><br>
+      <label>Drive Train</label><br>
+      <input type="text" name="drive_train" ng-model="ctrl.vehicle.drive_train"><br>
+      <label>Fuel</label><br>
+      <input type="text" name="fuel" ng-model="ctrl.vehicle.fuel"><br>
+      <label>Body</label><br>
+      <input type="text" name="body_type" ng-model="ctrl.vehicle.body_type"><br>
+      <label>Transmission</label><br>
+      <input type="text" name="transmission" ng-model="ctrl.vehicle.transmission"><br>
+      <label>New or Used?</label><br>
+      <input type="radio" ng-model="ctrl.new_or_used" value="New"> New<br>
+      <input type="radio" ng-model="ctrl.new_or_used" value="Used"> Used<br>
+      <label>Invoice</label>
+      <input type="file" invoice-model="vehicle.invoice">
+      <input type="submit" value="Submit Vehicle">
+
+      {{ctrl.vehicle}}
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Ffile-digest://app/assets/javascripts/templates/_vehicle_form.html;TT:charsetI"
+utf-8;F:digest"%d)Ô‰ç§gke6pçúˇ7h|æ≤Z˛∆Ÿpî:lengthi&:dependencies_digest"%›}•U@OKéõP‡^nKÈ≥ƒ∏qQd\Skt:idI"E57e529e29e34e8e57e540daeddb7011be7bc2c2df3cd0905aa7e3e05595f6cfd;F:
+mtimel+øQW

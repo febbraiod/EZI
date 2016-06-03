@@ -1,15 +1,13 @@
 function ImportController($location, vehicleService) {
   ctrl = this;
-  ctrl.vehicle = new Vehicle();
 
-    // need to add default status when this fires
-  this.addVehicle = function() {
-    ctrl.vehicle.$save(function(resp) {
-      $location.path('vehicle/' + resp.vehicle.id);
-    }, function(err){
-      alert('Vehicle not added, see console log');
-      console.log(err);
-    });
+  // move to import_service:
+  // ctrl.vehicle = new Vehicle();
+  ctrl.vehicle = {};
+
+  ctrl.addVehicle = function(){
+    debugger
+    vehicleService.addVehicle(ctrl.vehicle);
   };
 
 }

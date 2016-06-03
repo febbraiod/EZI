@@ -13,8 +13,15 @@ module Api
       end
 
       def create
-        @vehicle = Vehicle.new(vehicle_params)
-        @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
+        binding.pry
+        if params[:vehicle]
+          @vehicle = Vehicle.new(vehicle_params)
+          @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
+        else
+          binding.pry
+          @vehicle = Vehicle.new(angular_vehicle_params)
+          @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
+        end
         if @vehicle.save 
           render json: @vehicle
         end 
@@ -37,6 +44,15 @@ module Api
                                         :drive_train, :fuel, :body_type, :options,
                                         :transmission, :new_or_used, :storage, 
                                         :delivered, :invoice)
+      end
+
+      def angular_vehicle_params
+        params.permit(:stock_no, :year, :make, :model, :VIN, 
+                      :odometer, :msrp, :dealer_price, :color,
+                      :interior_color, :photo_url_list, :engine,
+                      :drive_train, :fuel, :body_type, :options,
+                      :transmission, :new_or_used, :storage, 
+                      :delivered, :invoice)
       end
 
 

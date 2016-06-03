@@ -1,19 +1,24 @@
 Do next:
 
-!!!<look at linked in before mollie chat>
-
-    
-1. forms work --- need to add default status when adding vehicle manually.(rails side)
 
 2. invoice - need to install paperclip(get a couple real invoices to play with) <---- blog post?  keep track of implementation (or calendar)
+
+
+start with a list of status starting from oldest to newest. see if you can find a method to say like:
+
+  8 days old : User set <link to vehicle> to <status>
+
+  clean up for presentation.
+
+
+
+______________ this is all going to have to wait
 
 3. delivered list(how to handled vehicles no longer in inventory)
 need to be able to 'undeliver' vehcile incase of user error.
 also need to be able to delete vehicle in case of bad data.(admin)
 
 4. Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days <--- blog? keep track of steps, but start with a list of status starting from oldest to newest. see if you can find a method to say like:
-
-  8 days old : User set <link to vehicle> to <status>
 
 5. need pagination on inventory page
 
@@ -39,7 +44,9 @@ well guests should be able to log in and out.(check out nav)
 
 10.  need to change VIN to vin everywhere. VIN is triggering unintialized constant errors in validation callback, i'm guessing it's screwing up the validation itself. if VIN present on import just update data
 
-11. register is not working but i'd like to save this for the end. 
+11. array-i-fy the options on vehicles, this will give us better display options for display and filtering
+
+12. register is not working but i'd like to save this for the end. 
 or we could just do registration from the rails side
 this might help:
 https://learn.co/tracks/full-stack-web-development/angularjs/custom-services/angular-resource

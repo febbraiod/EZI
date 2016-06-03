@@ -6,6 +6,8 @@ class Vehicle < ActiveRecord::Base
   before_validation :color_check
 
   has_attached_file :invoice, default_url: ':style/default_missing_invoice.png'
+  validates_attachment_content_type :invoice, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
 
   has_many :notes
   has_many :note_authors, through: :notes, source: :user
@@ -31,7 +33,7 @@ class Vehicle < ActiveRecord::Base
   protected
 
   def color_check
-    if color.length > 47
+    if color && color.length > 47
       c = color.delete(' ')
       c.slice! 0..47
     end
