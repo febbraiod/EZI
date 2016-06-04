@@ -3,9 +3,13 @@
 <div ui-view>
 <p>I have a CENTRALIZED calendar that shows me the statuses of all the vehicles that ANYONE has touched which have unresolved statuses</p> 
 
-<p>this list of list of statuses is going to be the dtata used to build the calendar. Oldest at the top:</p>
+<p>this list of list of statuses is going to be the data used to build the calendar. Oldest at the top:</p>
   <ul>
-    <li ng-repeat='status in ctrl.status_obj.statuses | filter: { vehicle_status: "!Available" } | orderBy: "created_at"'>{{status}}</li>
+    <li style='padding: 10px;' ng-repeat='status in ctrl.status_obj.statuses | filter: { vehicle_status: "!Available" } | orderBy: "created_at"'>On {{status.created_at | date}}:<br> <p>{{status.user}} set {{status.vehicle_name}} Stock Number: <a href='#'>{{status.vehicle_stock}}</a> to {{status.vehicle_status}}</p></li>
   </ul>
-
 </div>
+
+<!-- get to this: 8 days old- User set <link to vehicle> to <status> -->
+<!-- use http://momentjs.com/ -->
+
+<!--  make status more readable 'FandI' is not good -->

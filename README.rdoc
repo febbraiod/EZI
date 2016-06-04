@@ -1,15 +1,14 @@
 Do next:
 
-invoice went through, display it and hook up file option for edit form.
 
-start with a list of status starting from oldest to newest. see if you can find a method to say like:
+start with a list of statuses starting from oldest to newest. see if you can find a method to say like:
 
   8 days old: User set <link to vehicle> to <status>
 
   clean up for presentation.
 
 
-2. invoice - need to install paperclip(get a couple real invoices to play with) <---- blog post?  keep track of implementation (or calendar)
+finish blog post about paperclip
 
 
 

@@ -1,6 +1,12 @@
 <h1>I'm the specific Users page</h1>
-<p>I have a calendar that show me the status of all the vehicles that my user has touched that have unresolved statuses. If not a calendar I could be a list of vechiles with unresolved statuses. Oldest at the top.</p>
+<p>I have a calendar that shows the status of all the vehicles that my user has touched that have unresolved statuses.</p>
+<p>While the calendar is developed, I will be a list of vehicles with unresolved statuses. Oldest at the top.</p>
 
 
-  {{ctrl.user}}
+  <ul>
+    <li style='padding: 10px;' ng-repeat='status in ctrl.user.user.statuses | filter: { vehicle_status: "!Available" } | orderBy: "created_at"'>On {{status.created_at | date}} you set {{status.vehicle_name}} Stock Number: <a href='#'>{{status.vehicle_stock}}</a> to {{status.vehicle_status}}</li>
+  </ul>
+<!-- get to this: 8 days old- User set <link to vehicle> to <status> -->
+<!-- use http://momentjs.com/ -->
 
+<!--  make status more readable 'FandI' is not good -->

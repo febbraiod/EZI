@@ -21,7 +21,7 @@ module Api
       end
 
       def destroy
-        respond_with Note.destroy(params[:id]) # not sure about this but it worked
+        respond_with Note.destroy(params[:id]) # not sure about this but it worked, why am i responding?
       end
 
 
