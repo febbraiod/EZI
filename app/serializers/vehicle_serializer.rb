@@ -4,8 +4,17 @@ class VehicleSerializer < ActiveModel::Serializer
              :interior_color, :photo_url_list, :engine,
              :drive_train, :fuel, :body_type, :options,
              :transmission, :new_or_used, :storage, 
-             :delivered
+             :delivered, :invoice
 
   has_many :notes
   has_one :status, serializer: VehicleStatusSerializer
+
+  def invoice
+    if object.invoice
+      object.invoice.url
+    else
+      'Invoice Not Attached'
+    end
+  end
+
 end

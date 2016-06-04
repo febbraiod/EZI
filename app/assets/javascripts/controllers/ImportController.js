@@ -6,7 +6,6 @@ function ImportController($location, vehicleService) {
   ctrl.vehicle = {};
 
   ctrl.addVehicle = function(){
-    debugger
     vehicleService.addVehicle(ctrl.vehicle);
   };
 

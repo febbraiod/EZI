@@ -72,7 +72,8 @@
 
 
     <tab label='Invoice'>
-        <p>invoice</p>
+        <div ng-if="ctrl.vehicle.invoice !== 'original/default_missing_invoice.png'"><img src={{ctrl.vehicle.invoice}} alt="Invoice" height="906" width="700"></div>
+        <div ng-if="ctrl.vehicle.invoice === 'original/default_missing_invoice.png'"><h1>Invoice not attached</h1></div>
     </tab>
 
     <tab ng-if="session.userrole === 'admin'" label='Edit Vehicle'>

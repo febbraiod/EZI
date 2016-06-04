@@ -28,8 +28,9 @@ module Api
       end
 
       def update 
+        binding.pry
         @vehicle = Vehicle.find_by(id: params[:id])
-        if @vehicle.update(vehicle_params) 
+        if @vehicle.update(angular_vehicle_params) 
           render json: @vehicle
         end 
       end

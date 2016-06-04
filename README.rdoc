@@ -1,14 +1,16 @@
 Do next:
 
-
-2. invoice - need to install paperclip(get a couple real invoices to play with) <---- blog post?  keep track of implementation (or calendar)
-
+invoice went through, display it and hook up file option for edit form.
 
 start with a list of status starting from oldest to newest. see if you can find a method to say like:
 
-  8 days old : User set <link to vehicle> to <status>
+  8 days old: User set <link to vehicle> to <status>
 
   clean up for presentation.
+
+
+2. invoice - need to install paperclip(get a couple real invoices to play with) <---- blog post?  keep track of implementation (or calendar)
+
 
 
 
@@ -36,7 +38,7 @@ mileages?
 
 7. vehicle show page: layout/photos
 
-8. route authoriztions
+8. route authorizations
 
 9. Admin users page needs to be able to edit users esp: role. Dont really need an approval system, unapproved just remains 'guest' and therefore will have access to nothing.
 
