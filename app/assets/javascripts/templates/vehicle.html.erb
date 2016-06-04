@@ -1,16 +1,14 @@
-<h1>I am the detailed vehicle show page.  I have tabs, details, notes, invoice </h1>
-
 <tabs>
-
     <tab label='Vehicle Details'>
         <div style="float:left; width:45%;"> <!-- temp. to be addressed with bootstrap -->
-            <h3>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h3>
+            <h2>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h2>
             <h4>{{ctrl.vehicle.color}}</h4>
             <p>Ownership: {{ctrl.vehicle.new_or_used}}</p>
             <p>MSRP: {{ctrl.vehicle.msrp}}</p>
             <p>Asking: {{ctrl.vehicle.dealer_price}}</p>
             <p>Vehicle is: {{ctrl.vehicle.status.vehicle_status}}</p>
             <p>VIN: {{ctrl.vehicle.VIN}}</p>
+            <p>Stock Number: {{ctrl.vehicle.stock_no}}</p>
             <p>Engine: {{ctrl.vehicle.engine}}</p>
             <p>{{ctrl.vehicle.body_type}} {{ctrl.vehicle.drive_train}} {{ctrl.vehicle.fuel}}</p>
             <p>Location: {{ctrl.vehicle.storage}}</p>
@@ -19,7 +17,7 @@
 
         <div style="float:right; width:45%; text-align: left;"> <!-- temp. to be addressed with bootstrap -->
 
-            <div style="border-style: solid; margin: 5px; padding: 3px;" ng-controller="StatusController as statusCtrl">
+            <div style="border:1px solid black; margin: 5px; padding: 20px;" ng-controller="StatusController as statusCtrl">
                 <h3>Current Vehicle Status: {{ctrl.vehicle.status.vehicle_status}}</h3>
                 <h4>Status Applied by: {{ctrl.vehicle.status.user}}</h4>
                 <h5>Change Status:</h5>
@@ -39,7 +37,7 @@
             </div>
 
 
-            <div style="border-style: solid; margin: 5px; padding: 3px;" ng-controller='NoteController as noteCtrl'>
+            <div style="border:1px solid black; margin: 5px; padding: 20px;" ng-controller='NoteController as noteCtrl'>
                 <h3>Add note</h3>
                 <form ng-submit="noteCtrl.addNote()">
                     <label>Content</label><br>
@@ -56,6 +54,8 @@
     </tab>
 
     <tab label='Activity Log'>
+    <h2>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h2>
+    <p>Stock Number: {{ctrl.vehicle.stock_no}}</p><br>
         <div ng-controller='NoteController as noteCtrl'>
             <h3>Add note</h3>
             <form ng-submit="noteCtrl.addNote()"> <!-- might want to make at least this form into a partial and use ng-include since im repeating my self here. -->
@@ -74,9 +74,12 @@
     <tab label='Invoice'>
         <div ng-if="ctrl.vehicle.invoice !== 'original/default_missing_invoice.png'"><img src={{ctrl.vehicle.invoice}} alt="Invoice" height="906" width="700"></div>
         <div ng-if="ctrl.vehicle.invoice === 'original/default_missing_invoice.png'"><h1>Invoice not attached</h1></div>
+        <!-- need options for printing. -->
     </tab>
 
     <tab ng-if="session.userrole === 'admin'" label='Edit Vehicle'>
+        <h2>{{ctrl.vehicle.year}} {{ctrl.vehicle.make}} {{ctrl.vehicle.model}}</h2>
+        <p>Stock Number: {{ctrl.vehicle.stock_no}}</p>
         <form name='ctrl.updateVehicleForm' ng-submit="ctrl.updateVehicle()">
             <div ng-include="'_vehicle_form.html'"></div>
         </form>

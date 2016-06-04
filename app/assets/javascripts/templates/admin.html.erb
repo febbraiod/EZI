@@ -1,9 +1,9 @@
-<h1>I'm the Main Admin page</h1>
-<admin-nav></admin-nav>
-<div ui-view>
-<p>I have a CENTRALIZED calendar that shows me the statuses of all the vehicles that ANYONE has touched which have unresolved statuses</p> 
+<h1>Admin Section</h1>
 
-<p>this list of list of statuses is going to be the data used to build the calendar. Oldest at the top:</p>
+<div ui-view>
+<p>I have a CENTRALIZED calendar that shows me the statuses of all the vehicles that ANYONE has touched which have unresolved statuses</p> <br>
+
+<p>This is a list of statuses that is going to be the data used to build the calendar. Oldest at the top:</p><br>
   <ul>
     <li style='padding: 10px;' ng-repeat='status in ctrl.status_obj.statuses | filter: { vehicle_status: "!Available" } | orderBy: "created_at"'>On {{status.created_at | date}}:<br> <p>{{status.user}} set {{status.vehicle_name}} Stock Number: <a href='#'>{{status.vehicle_stock}}</a> to {{status.vehicle_status}}</p></li>
   </ul>

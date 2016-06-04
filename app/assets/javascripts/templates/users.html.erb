@@ -1,6 +1,6 @@
 <h1>Users Index page</h1>
-<p>I'm only for admins. This is where users are approved or removed. Not sure how to do this yet.</p>
+<p>I'm only for admins. This is where users roles are set. Also contain links to user calendars</p>
 
 <ul>
-  <li ng-repeat="user in ctrl.user_list.users"><a href="#" ui-sref="users({ name: user.name })">{{user.name}}</a> {{user.role}} <br> buttons for editing user role</li>
+  <li style='padding: 10px;' ng-repeat="user in ctrl.user_list.users">User Name: <a href="#" ui-sref="users({ name: user.name })">{{user.name}}</a> <br>User role: {{user.role}} <br> add radio buttons for editing user role</li>
 <ul>
