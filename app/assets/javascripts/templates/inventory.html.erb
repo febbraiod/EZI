@@ -14,11 +14,16 @@
 
 <br>
   Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input>
+  <br>
+  <ul class='pagination'>
+    <li ng-if='ctrl.firstVehicle > 0' ng-click='ctrl.prevPage()'><a>prev</a></li>
+    <li ng-if='ctrl.lastVehicle < ctrl.totalVehicles - 1' ng-click='ctrl.nextPage()'><a>next</a></li>
+  </ul>
   <ul>
 <!--   how can I paginate about allow the seach filters to work?
   move everything to the controller and widdle things down 
   to a 'filterList' then slice up that collection? -->
-  <li ng-repeat="vehicle in ctrl.filteredList | inventoryDropdownFilter: dropdown.value">
+  <li ng-repeat="vehicle in ctrl.pageVehicles">
       <stock-card
       year="vehicle.year",
       make="vehicle.make",
@@ -35,5 +40,6 @@
       </stock-card>
   </li>
 </ul>
+
 </div>
 

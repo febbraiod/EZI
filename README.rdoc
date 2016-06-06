@@ -1,8 +1,7 @@
 Do next:
 
 add statuses for other users besides admin
-move filters for main inventory into controller
-paginate like in the hackernews lab
+prettify page turning in inventory
 
 
 plan presentation for avi. relevent pages:
