@@ -2,7 +2,7 @@
 <h1>I'm the Inventory Index page</h1>
 <form>
   <label for="additional_filters">Optional Filters</label>
-    <select name='additional_filters' ng-model='dropdown.value' ng-init="dropdown.value='all'">
+    <select name='additional_filters' ng-model='ctrl.dropdown' ng-init="dropdown.value='all'" ng-change="ctrl.refilter()">
       <option value="all">All</option>
       <option value="New">New</option>
       <option value="Used">Used</option>
@@ -13,12 +13,12 @@
 </form>
 
 <br>
-  Search Filtered List: <input ng-model="ctrl.search"></input>
+  Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input>
   <ul>
 <!--   how can I paginate about allow the seach filters to work?
   move everything to the controller and widdle things down 
   to a 'filterList' then slice up that collection? -->
-  <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value">
+  <li ng-repeat="vehicle in ctrl.filteredList | inventoryDropdownFilter: dropdown.value">
       <stock-card
       year="vehicle.year",
       make="vehicle.make",

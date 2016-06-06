@@ -1,7 +1,5 @@
 function inventoryDropdownFilter(){
   return function(filteredList, dropdownvalue){
-    //vehicles ctrl.vehicles
-    //dropdownvalue = 'used'
 
     if(dropdownvalue === undefined){
       return true;
