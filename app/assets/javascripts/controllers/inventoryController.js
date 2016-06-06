@@ -1,12 +1,8 @@
-function InventoryController(inventoryService) {
+function InventoryController(inventoryService, vehicles) {
   var ctrl = this;
 
-  ctrl.vehicles = [];
+  ctrl.vehicles = vehicles;
  
-  inventoryService.getInventory.then(function(response) {
-    ctrl.vehicles = response;
-  });
-
 }
 
 angular

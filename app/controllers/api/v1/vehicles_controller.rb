@@ -13,7 +13,6 @@ module Api
       end
 
       def create
-        binding.pry
         if params[:vehicle]
           @vehicle = Vehicle.new(vehicle_params)
           @vehicle.build_status(user_id: 1, vehicle_status: 'Available')

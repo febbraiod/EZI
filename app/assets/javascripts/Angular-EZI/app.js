@@ -22,27 +22,32 @@ angular
       .state('welcome.signup', {
         url: 'signup',
         templateUrl: 'signup.html',
-        controller: 'AuthController',
+        controller: 'AuthController'
       })
       .state('inventory', {
         url: '/inventory',
         templateUrl: 'inventory.html',
-        controller: 'InventoryController as ctrl'
+        controller: 'InventoryController as ctrl',
+        resolve: {
+          vehicles: function(inventoryService){
+            return inventoryService.getInventory;
+          }
+        }
       })
       .state('inventory.delivered', {
         url: '/delivered',
-        templateUrl: 'delivered_vehicles.html',
+        templateUrl: 'delivered_vehicles.html'
         // controller: 'deliveredController'
       })
       .state('vehicle', {
         url: '/vehicle/:id',
         templateUrl: 'vehicle.html',
-        controller: 'VehicleController as ctrl',
+        controller: 'VehicleController as ctrl'
       })
       .state('users', {
         url: '/users/:name',
         templateUrl: 'user.html',
-        controller: 'UserController as ctrl',
+        controller: 'UserController as ctrl'
       })
       .state('admin', {
         url: '/admin',
@@ -56,7 +61,7 @@ angular
       })
       .state('admin.analytics', {
         url: '/analytics',
-        templateUrl: 'stats.html',
+        templateUrl: 'stats.html'
         // controller: 'StatsController'
       })
       .state('admin.import', {
@@ -66,7 +71,7 @@ angular
       })
       .state('admin.swaps', {
         url: '/swaplists',
-        templateUrl: 'swaps.html',
+        templateUrl: 'swaps.html'
         // controller: 'SwapController'
       });
   });

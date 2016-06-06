@@ -4,6 +4,7 @@ function vehicleService($http, $resource, $stateParams){
 
   this.addVehicle = function(data){
     var fd = new FormData();
+    var v = {};
     for(var key in data){
       fd.append(key, data[key]);
     }
@@ -17,8 +18,8 @@ function vehicleService($http, $resource, $stateParams){
 
 
   this.getVehicle = function(){
-                    return $http({ method: 'GET', url: 'http://localhost:3000/api/v1/vehicles/' + $stateParams.id});
-                    };
+    return $http({ method: 'GET', url: 'http://localhost:3000/api/v1/vehicles/' + $stateParams.id});
+  };
 
   this.updateVehicle = function(data){
     var fd = new FormData();

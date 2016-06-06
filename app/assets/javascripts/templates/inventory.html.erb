@@ -15,6 +15,9 @@
 <br>
   Search Filtered List: <input ng-model="ctrl.search"></input>
   <ul>
+<!--   how can I paginate about allow the seach filters to work?
+  move everything to the controller and widdle things down 
+  to a 'filterList' then slice up that collection? -->
   <li ng-repeat="vehicle in ctrl.vehicles | filter: ctrl.search | inventoryDropdownFilter: dropdown.value">
       <stock-card
       year="vehicle.year",

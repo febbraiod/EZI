@@ -1,12 +1,12 @@
 function inventoryDropdownFilter(){
-  return function(vehicles, dropdownvalue){
+  return function(filteredList, dropdownvalue){
     //vehicles ctrl.vehicles
     //dropdownvalue = 'used'
 
     if(dropdownvalue === undefined){
       return true;
     }else{
-      return vehicles.filter(function(vehicle){
+      return filteredList.filter(function(vehicle){
 
         if(dropdownvalue === 'New' || dropdownvalue === 'Used'){
           return vehicle.new_or_used === dropdownvalue;

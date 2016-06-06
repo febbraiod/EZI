@@ -1,16 +1,17 @@
 Do next:
 
-Sat 6/4/16
-
-plan presentation for avi.  Clean up relevant pages first:
-
-  add statuses for other users besides admin
+add statuses for other users besides admin
+move filters for main inventory into controller
+paginate like in the hackernews lab
 
 
-  main inventory(is pagination hard in angular?)
+plan presentation for avi. relevent pages:
 
 
-  show page:
+  main inventory
+
+
+  show page
 
 
   Rails Import
@@ -24,9 +25,8 @@ plan presentation for avi.  Clean up relevant pages first:
 
   user calendar page
 
+  anything else?
 
-
-finish blog post about paperclip
 
 
 record presentation and submit.

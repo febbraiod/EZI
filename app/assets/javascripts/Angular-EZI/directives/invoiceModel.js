@@ -1,6 +1,5 @@
 function invoiceModel($parse){
   return {
-    scope: false,
     link: function(scope, element, attrs){
 
       element.bind('change', function(){
