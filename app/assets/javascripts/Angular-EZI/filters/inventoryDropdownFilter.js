@@ -1,6 +1,5 @@
 function inventoryDropdownFilter(){
   return function(filteredList, dropdownvalue){
-    debugger
     if(dropdownvalue === undefined){
       return true;
     }else{

@@ -13,12 +13,13 @@
 </form>
 
 <br>
-  Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input>
-  <br>
-  <ul class='pagination'>
-    <li ng-if='ctrl.firstVehicle > 0' ng-click='ctrl.prevPage()'><a>prev</a></li>
-    <li ng-if='ctrl.lastVehicle < ctrl.totalVehicles - 1' ng-click='ctrl.nextPage()'><a>next</a></li>
-  </ul>
+  <div style='display :inline'> Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input></div>
+  
+  <div id='pagination' style='display: inline; margin: 140px'>
+    <p style='display: inline; margin: 10px'> Now showing {{ctrl.firstVehicle + 1}}-{{ctrl.lastVehicle - 1}} of {{ctrl.totalVehicles}} matching vehicles </p>
+    <button ng-show='ctrl.firstVehicle > 0' ng-click='ctrl.prevPage()'>prev page</button>
+    <button ng-show='ctrl.lastVehicle < ctrl.totalVehicles - 1' ng-click='ctrl.nextPage()'>next page</button>
+  </div>
   <ul>
 <!--   how can I paginate about allow the seach filters to work?
   move everything to the controller and widdle things down 
@@ -36,7 +37,8 @@
       neworused ="vehicle.new_or_used",
       odometer= "vehicle.odometer",
       options= "vehicle.options",
-      dealerprice= "vehicle.dealer_price">
+      dealerprice= "vehicle.dealer_price"
+      status = "vehicle.status">
       </stock-card>
   </li>
 </ul>

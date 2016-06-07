@@ -13,7 +13,8 @@ var StockCard = {
       neworused: '<',
       odometer: '<',
       options: '<',
-      dealerprice: '<'
+      dealerprice: '<',
+      status: '<'
     },
   template: [
   "<div class = 'vehicle_card'>", // add to class based on status so we can color code the cards'
@@ -34,8 +35,8 @@ var StockCard = {
     "<div class='card_section'>",
       "<p>ownership: {{ctrl.neworused}}</p>",
       "<p>odometer: {{ctrl.odometer}}</p>",
-      "<p>Status: {{ctrl.status}}</p>",
-      "<p>Status applied by: {{ctrl.status.user.name}}</p>",
+      "<p>Status: {{ctrl.status.vehicle_status}}</p>",
+      "<p>Status applied by: {{ctrl.status.user}}</p>",
     "</div>",
     "<div class='card_section'>",
       "<p>Options(abv): {{ctrl.options}}</p>",

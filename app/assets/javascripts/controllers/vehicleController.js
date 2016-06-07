@@ -1,4 +1,5 @@
 function VehicleController($scope, $state, vehicleService) {
+
   ctrl = this;
 
   vehicleService.getVehicle().then(function(resp) {

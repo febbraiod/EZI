@@ -1,0 +1,15 @@
+{:uriI"file://app/assets/javascripts/templates/_admin_nav.html?type=text/ng-html&id=3734ed5f759fcddf72db7c54ca413124364274b3b2a741f018c5a4120085e31b:ET:load_pathI"app/assets/javascripts;T:filenameI"5app/assets/javascripts/templates/_admin_nav.html;T:	nameI"templates/_admin_nav;T:logical_pathI"templates/_admin_nav.html;T:content_typeI"text/ng-html;T:sourceI"Ö<ul>
+    <li><a href="#" ui-sref="admin">Inventory Calendar</a>
+    <li><a href="#" ui-sref="admin.users">Staff Management</a></li>
+    <li><a href="#" ui-sref="admin.analytics">Analylics</a></li>
+    <li><a href="#" ui-sref="admin.swaps">Swaps</a></li>
+    <li><a href="#" ui-sref="admin.import">Update Inventory</a></li>
+    <li><a href="#" ui-sref="inventory">Main Inventory</a></li>
+    <li><a href="#" ui-sref="inventory.delivered">Delivery History</a></li>
+</ul>
+
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Cfile-digest://app/assets/javascripts/templates/_admin_nav.html;TT:charsetI"
+utf-8;F:digest"%½QÔù£\éÖËŸ—œò*@…è‰Ç÷Ç1—İæ8:lengthiÖ:dependencies_digest"%h­qçM±¹ıiŞç^Sô¯r&-,ª’IúçŸgzvãÖŞ:idI"E3734ed5f759fcddf72db7c54ca413124364274b3b2a741f018c5a4120085e31b;F:
+mtimel+Ú"VW

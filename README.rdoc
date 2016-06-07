@@ -1,7 +1,5 @@
 Do next:
 
-add statuses for other users besides admin
-prettify page turning in inventory
 
 
 plan presentation for avi. relevent pages:
@@ -26,9 +24,18 @@ plan presentation for avi. relevent pages:
 
   anything else?
 
-
-
 record presentation and submit.
+
+
+
+at assessment:
+
+Ask Avi about the logout problem.
+(when you log out the next user to login in can't set statuses properly 
+i think because current_user on the rails side 
+doesn't seem to get set until page refresh. And I can't seem to force it.)
+
+
 
 
 
@@ -39,9 +46,9 @@ ______________ this is all going to have to wait
 need to be able to 'undeliver' vehcile incase of user error.
 also need to be able to delete vehicle in case of bad data.(admin)
 
-4. Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days <--- blog? keep track of steps, but start with a list of status starting from oldest to newest. see if you can find a method to say like:
+4a. add buttons to update status on caledar page so you dont have to go back to the show page.
 
-5. need pagination on inventory page
+4b. Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days <--- blog? keep track of steps, but start with a list of status starting from oldest to newest. see if you can find a method to say like:
 
 6. add drop down filters.
 one for each option:

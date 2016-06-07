@@ -1029,7 +1029,7 @@ hr {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #1351d8;
 }
 
 .tabs__list li {
@@ -1046,4 +1046,28 @@ hr {
 
 .tabs__content {
     padding: 10px;
+}
+
+#leftsidebar{
+    position: fixed;
+    height: 1000px;
+    background: #1351d8;
+    padding: 10px;
+}
+
+#leftsidebar a{
+  color: white;
+}
+
+h1 {
+  color: #1351d8;
+}
+
+#logotype {
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  padding: 0 10px 0 0;
+  margin: 10px 30px 25px 30px;
+  border-style: solid;
 }
