@@ -5,24 +5,30 @@ Do next:
 plan presentation for avi. relevent pages:
 
 
-  main inventory
+  main inventory:
+
+    pagination
+    filter
+    search <-- show how pagination reacts to that
 
 
-  show page
+  show page(use first vehicle):
+
+    details: obv
+    current status
+    setting status:
+    how that gets added to activity log
+    make sold for pop up button
+    adding notes
+    invoice
+    edit page (for admins)
 
 
   Rails Import
-
-
-  forms
-
-
+  admin add vehicle
   admin calendar page
-
-
   user calendar page
 
-  anything else?
 
 record presentation and submit.
 

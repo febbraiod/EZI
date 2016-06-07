@@ -17,8 +17,7 @@ module Api
           @vehicle = Vehicle.new(vehicle_params)
           @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
         else
-          binding.pry
-          @vehicle = Vehicle.new(angular_vehicle_params)
+          @vehicle = Vehicle.new(angular_vehicle_params.except(:format))
           @vehicle.build_status(user_id: 1, vehicle_status: 'Available')
         end
         if @vehicle.save 
@@ -27,9 +26,8 @@ module Api
       end
 
       def update 
-        binding.pry
         @vehicle = Vehicle.find_by(id: params[:id])
-        if @vehicle.update(angular_vehicle_params) 
+        if @vehicle.update(angular_vehicle_params.except(:format))
           render json: @vehicle
         end 
       end
@@ -52,7 +50,7 @@ module Api
                       :interior_color, :photo_url_list, :engine,
                       :drive_train, :fuel, :body_type, :options,
                       :transmission, :new_or_used, :storage, 
-                      :delivered, :invoice)
+                      :delivered, :invoice, :id, :format)
       end
 
 

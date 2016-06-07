@@ -6,7 +6,10 @@ function ImportController($location, vehicleService) {
   ctrl.vehicle = {};
 
   ctrl.addVehicle = function(){
-    vehicleService.addVehicle(ctrl.vehicle);
+    vehicleService.addVehicle(ctrl.vehicle).then(function(resp){
+      debugger
+       $location.path('vehicle/' + resp.data.vehicle.id);
+    });
   };
 
 }

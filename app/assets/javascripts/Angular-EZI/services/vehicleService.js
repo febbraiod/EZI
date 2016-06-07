@@ -3,8 +3,8 @@ function vehicleService($http, $resource, $stateParams){
   // Vehicle = $resource('http://localhost:3000/api/v1/vehicles/:id.json', {id: '@id'});
 
   this.addVehicle = function(data){
+    debugger
     var fd = new FormData();
-    var v = {};
     for(var key in data){
       fd.append(key, data[key]);
     }
@@ -22,6 +22,11 @@ function vehicleService($http, $resource, $stateParams){
   };
 
   this.updateVehicle = function(data){
+    delete data.notes;
+    delete data.status;
+    if(typeof data.invoice === "string"){
+      delete data.invoice;
+    }
     var fd = new FormData();
     for(var key in data){
       fd.append(key, data[key]);
