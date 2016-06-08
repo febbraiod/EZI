@@ -6,10 +6,14 @@ work on don.com
 
 at assessment:
 
-Ask Avi about the logout problem.
+Ask Avi about the logout problem:
+
 (when you log out the next user to login in can't set statuses properly 
 i think because current_user on the rails side 
 doesn't seem to get set until page refresh. And I can't seem to force it.)
+
+might also be related: when you change the status on show page it updates there immediately, 
+but if you got directly back to the main inventory it doesn't change without a refresh. 
 
 
 

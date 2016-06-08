@@ -23,7 +23,7 @@
 
 <div style='position: relative; top: 165px;'>
   <ul>
-    <li ng-repeat="vehicle in ctrl.pageVehicles">
+    <li ng-repeat="vehicle in ctrl.pageVehicles track by vehicle.id">
         <stock-card
         year="vehicle.year",
         make="vehicle.make",
