@@ -5,7 +5,7 @@ function inventoryDropdownFilter(){
     }else{
       return filteredList.filter(function(vehicle){
 
-        if(dropdownvalue === 'New' || dropdownvalue === 'Used'){
+        if(dropdownvalue === 'New' || dropdownvalue === 'Pre-Owned'){
           return vehicle.new_or_used === dropdownvalue;
         }else if(dropdownvalue === 'moonroof'){
           if(vehicle.options){

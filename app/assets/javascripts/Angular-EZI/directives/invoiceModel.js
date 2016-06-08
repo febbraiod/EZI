@@ -1,4 +1,4 @@
-function invoiceModel($parse){
+function invoiceModel(){
   return {
     link: function(scope, element, attrs){
 
@@ -12,4 +12,4 @@ function invoiceModel($parse){
 
 angular
   .module('app')
-  .directive('invoiceModel', ['$parse', invoiceModel]);
+  .directive('invoiceModel', invoiceModel);

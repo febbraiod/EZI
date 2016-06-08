@@ -4,7 +4,7 @@ Import Inventory:
 
 <%= form_tag vehicles_import_path, multipart: true do %>
   <%= file_field_tag :file %><br>
-  <%= select_tag "new_or_used", "<option>New</option><option>Used</option>".html_safe %><br>
+  <%= select_tag "new_or_used", "<option>New</option><option>Pre-Owned</option>".html_safe %><br>
   <%= submit_tag "Import CSV" %>
 <% end %>
 

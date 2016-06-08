@@ -46,7 +46,7 @@
                 </form>
                 <h3>Most Recent activity:</h3>
                 <p ng-repeat="note in ctrl.vehicle.notes | orderBy: '-created_at' | limitTo: 3">
-                    {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+                    {{note.user}} on {{note.created_at | date}}: <br>{{note.content}}<br>
                     <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
                 </p>
             </div>
@@ -64,7 +64,7 @@
                 <input type="submit" value="Add Note">
             </form>
             <p ng-repeat="note in ctrl.vehicle.notes | orderBy: '-created_at'">
-            {{note.user}} on {{note.created_at}}: <br>{{note.content}}<br>
+            {{note.user}} on {{note.created_at | date}}: <br>{{note.content}}<br>
             <button ng-if="session.userrole === 'admin'" ng-click="noteCtrl.removeNote(note)">delete button</button></span>
             </p>
         </div>

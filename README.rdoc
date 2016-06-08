@@ -1,36 +1,15 @@
 Do next:
 
+change statuses 'Used' => 'Pre-owned'
+                'FandI' => 'in financing'
+                dropdown filter will need this adjustment
 
+                Change 'Used' in Displays as well i.e. on the forms
+                form values need to change too
 
-plan presentation for avi. relevent pages:
+do a learn career assignment
 
-
-  main inventory:
-
-    pagination
-    filter
-    search <-- show how pagination reacts to that
-
-
-  show page(use first vehicle):
-
-    details: obv
-    current status
-    setting status:
-    how that gets added to activity log
-    make sold for pop up button
-    adding notes
-    invoice
-    edit page (for admins)
-
-
-  Rails Import
-  admin add vehicle
-  admin calendar page
-  user calendar page
-
-
-record presentation and submit.
+work on don.com
 
 
 
@@ -49,7 +28,7 @@ doesn't seem to get set until page refresh. And I can't seem to force it.)
 ______________ this is all going to have to wait
 
 3. delivered list(how to handled vehicles no longer in inventory)
-need to be able to 'undeliver' vehcile incase of user error.
+need to be able to 'undeliver' vehcile in case of user error.
 also need to be able to delete vehicle in case of bad data.(admin)
 
 4a. add buttons to update status on caledar page so you dont have to go back to the show page.
