@@ -1,11 +1,8 @@
 Do next:
 
 change statuses 'Used' => 'Pre-owned'
-                'FandI' => 'in financing'
-                dropdown filter will need this adjustment
+                'FandI' => 'in business office'
 
-                Change 'Used' in Displays as well i.e. on the forms
-                form values need to change too
 
 do a learn career assignment
 
