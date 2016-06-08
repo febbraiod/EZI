@@ -1,47 +1,46 @@
-<div ui-view>
-<h1>Dealership Inventory</h1>
-<form>
-  <label for="additional_filters">Optional Filters</label>
-    <select name='additional_filters' ng-model='ctrl.dropdown' ng-init="dropdown.value='all'" ng-change="ctrl.refilter()">
-      <option value="all">All</option>
-      <option value="New">New</option>
-      <option value="Pre-Owned">Pre-Owned</option>
-      <option value="moonroof">Options: Sunroof/Moonroof</option>
+<div style='background: white; position: fixed; z-index: 1; width: 100%;'>
+  <h1>Dealership Inventory</h1>
+  <form>
+    <label for="additional_filters">Optional Filters</label>
+      <select name='additional_filters' ng-model='ctrl.dropdown' ng-init="dropdown.value='all'" ng-change="ctrl.refilter()">
+        <option value="all">All</option>
+        <option value="New">New</option>
+        <option value="Pre-Owned">Pre-Owned</option>
+        <option value="moonroof">Options: Sunroof/Moonroof</option>
+      </select>
+  </form>
 
-
-    </select>
-</form>
-
-<br>
-  <div style='display :inline'> Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input></div>
-  
-  <div id='pagination' style='display: inline; margin: 140px'>
-    <p style='display: inline; margin: 10px'> Now showing {{ctrl.firstVehicle + 1}}-{{ctrl.lastVehicle - 1}} of {{ctrl.totalVehicles}} matching vehicles </p>
-    <button ng-show='ctrl.firstVehicle > 0' ng-click='ctrl.prevPage()'>prev page</button>
-    <button ng-show='ctrl.lastVehicle < ctrl.totalVehicles - 1' ng-click='ctrl.nextPage()'>next page</button>
-  </div>
-  <ul>
-<!--   how can I paginate about allow the seach filters to work?
-  move everything to the controller and widdle things down 
-  to a 'filterList' then slice up that collection? -->
-  <li ng-repeat="vehicle in ctrl.pageVehicles">
-      <stock-card
-      year="vehicle.year",
-      make="vehicle.make",
-      model="vehicle.model",
-      color="vehicle.color",
-      msrp="vehicle.msrp",
-      stock="vehicle.stock_no",
-      vin="vehicle.VIN",
-      id="vehicle.id",
-      neworused ="vehicle.new_or_used",
-      odometer= "vehicle.odometer",
-      options= "vehicle.options",
-      dealerprice= "vehicle.dealer_price"
-      status = "vehicle.status">
-      </stock-card>
-  </li>
-</ul>
-
+  <br>
+    <div style='display :inline'> Search Filtered List: <input ng-model="ctrl.search" ng-change="ctrl.refilter()"></input></div>
+    <div id='pagination' style='display: inline; margin: 140px'>
+      <p style='display: inline; margin: 10px'> Now showing {{ctrl.firstVehicle + 1}}-{{ctrl.lastVehicle - 1}} of {{ctrl.totalVehicles}} matching vehicles </p>
+      <button ng-show='ctrl.firstVehicle > 0' ng-click='ctrl.prevPage()'>prev page</button>
+      <button ng-show='ctrl.lastVehicle < ctrl.totalVehicles - 1' ng-click='ctrl.nextPage()'>next page</button>
+      <p style='display: none;'>.<p>
+    </div>
 </div>
+
+
+<div style='position: relative; top: 165px;'>
+  <ul>
+    <li ng-repeat="vehicle in ctrl.pageVehicles">
+        <stock-card
+        year="vehicle.year",
+        make="vehicle.make",
+        model="vehicle.model",
+        color="vehicle.color",
+        msrp="vehicle.msrp",
+        stock="vehicle.stock_no",
+        vin="vehicle.VIN",
+        id="vehicle.id",
+        neworused ="vehicle.new_or_used",
+        odometer= "vehicle.odometer",
+        options= "vehicle.options",
+        dealerprice= "vehicle.dealer_price"
+        status = "vehicle.status">
+        </stock-card>
+    </li>
+  </ul>
+</div>
+
 

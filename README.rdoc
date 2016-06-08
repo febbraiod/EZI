@@ -1,13 +1,7 @@
 Do next:
 
-change statuses 'Used' => 'Pre-owned'
-                'FandI' => 'in business office'
-
-
-do a learn career assignment
 
 work on don.com
-
 
 
 at assessment:
@@ -32,7 +26,7 @@ also need to be able to delete vehicle in case of bad data.(admin)
 
 4b. Needs calendar and alert system to trigger when a car has been in a certain status for a set number of days <--- blog? keep track of steps, but start with a list of status starting from oldest to newest. see if you can find a method to say like:
 
-6. add drop down filters.
+5. add drop down filters.
 one for each option:
 Leather (lthr)
 cloth.  
@@ -44,19 +38,19 @@ available, test drive, sold, fandi
 price ranges?
 mileages?
 
-7. vehicle show page: layout/photos
+6. vehicle show page: layout/photos
 
-8. route authorizations
+7. route authorizations
 
-9. Admin users page needs to be able to edit users esp: role. Dont really need an approval system, unapproved just remains 'guest' and therefore will have access to nothing.
+8. Admin users page needs to be able to edit users esp: role. Dont really need an approval system, unapproved just remains 'guest' and therefore will have access to nothing.
 
 well guests should be able to log in and out.(check out nav)
 
-10.  need to change VIN to vin everywhere. VIN is triggering unintialized constant errors in validation callback, i'm guessing it's screwing up the validation itself. if VIN present on import just update data
+9.  need to change VIN to vin everywhere. VIN is triggering unintialized constant errors in validation callback, i'm guessing it's screwing up the validation itself. if VIN present on import just update data
 
-11. array-i-fy the options on vehicles, this will give us better display options for display and filtering
+10. array-i-fy the options on vehicles, this will give us better display options for display and filtering
 
-12. register is not working but i'd like to save this for the end. 
+11. register is not working but i'd like to save this for the end. 
 or we could just do registration from the rails side
 this might help:
 https://learn.co/tracks/full-stack-web-development/angularjs/custom-services/angular-resource
