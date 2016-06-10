@@ -2,11 +2,12 @@ function InventoryController($filter, inventoryService, vehicles) {
   var ctrl = this;
 
   ctrl.vehicles = vehicles;
-
+  
   ctrl.search = '';
   ctrl.dropdown = 'all';
 
   ctrl.refilter =  function(){
+    console.log("REFILTER FIRED");
     ctrl.filteredList  = $filter('filter')(ctrl.vehicles, ctrl.search);
     ctrl.filteredList = $filter('inventoryDropdownFilter')(ctrl.filteredList, ctrl.dropdown);
     ctrl.pageVehicles = ctrl.filteredList.slice(ctrl.firstVehicle, ctrl.lastVehicle);
@@ -19,7 +20,7 @@ function InventoryController($filter, inventoryService, vehicles) {
     }
   };
 
-  ctrl.refilter();
+  ctrl.refilter(); // does this fire - does a controller's body really fire on every state change or just reload?
 
 
   ctrl.nextPage = function(){

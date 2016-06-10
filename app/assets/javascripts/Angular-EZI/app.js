@@ -27,12 +27,13 @@ angular
       .state('inventory', {
         url: '/inventory',
         templateUrl: 'inventory.html',
-        controller: 'InventoryController as ctrl',
-        resolve: {
-          vehicles: function(inventoryService){
-            return inventoryService.getInventory;
-          }
-        }
+        controller: 'InventoryController as ctrl'
+        // resolve: { // Does resolve only fire on a hard reload or does it fire on state change?
+        //   vehicles: function(inventoryService){
+        //     console.log("RESOLVE FIRED")
+        //     return inventoryService.getInventory();
+        //   }
+        // }
       })
       .state('inventory.delivered', {
         url: '/delivered',
