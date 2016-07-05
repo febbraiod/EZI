@@ -11,7 +11,7 @@ function StatusController($stateParams, $state, statusService) {
 
   ctrl.changeStatus = function(){
     ctrl.status.vehicle_id = ctrl.vehicle_id;
-    ctrl.status.$save(function(){
+    ctrl.status.$save(function(new_vehcice){
       $state.reload();
     });
   };

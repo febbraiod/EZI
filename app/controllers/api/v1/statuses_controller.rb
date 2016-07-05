@@ -18,6 +18,7 @@ module Api
         v.status.user = current_user
         prev_status.destroy #this is so I can query a User instance for it's statuses 
                             #and only get active statuses not every status they ever set
+                            #avi suggested user has_many statuses, has_one current_status
         Note.note_for_status(v.status)
 
 
