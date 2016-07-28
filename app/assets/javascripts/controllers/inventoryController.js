@@ -6,10 +6,9 @@ function InventoryController($filter, inventoryService, vehicles) {
   ctrl.search = '';
   ctrl.dropdown = 'all';
 
-  ctrl.refilter =  function(){
+  ctrl.refilter = function(){
     ctrl.filteredList  = $filter('filter')(ctrl.vehicles, ctrl.search);
     ctrl.filteredList = $filter('inventoryDropdownFilter')(ctrl.filteredList, ctrl.dropdown);
-    ctrl.pageVehicles = ctrl.filteredList.slice(ctrl.firstVehicle, ctrl.lastVehicle);
     ctrl.totalVehicles = ctrl.filteredList.length;
     ctrl.firstVehicle = 0;
     if(ctrl.totalVehicles < 30){
@@ -17,10 +16,10 @@ function InventoryController($filter, inventoryService, vehicles) {
     }else{
       ctrl.lastVehicle = 31;
     }
+    ctrl.pageVehicles = ctrl.filteredList.slice(ctrl.firstVehicle, ctrl.lastVehicle);
   };
 
   ctrl.refilter();
-
 
   ctrl.nextPage = function(){
     ctrl.firstVehicle += 30;
